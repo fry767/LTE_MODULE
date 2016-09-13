@@ -28,7 +28,7 @@
 /* Includes ------------------------------------------------------------------*/
 
 #include "usbh_core.h"
-
+#include "rndis.h"
 
 /** @addtogroup USBH_LIB
   * @{
@@ -81,6 +81,23 @@ static USBH_StatusTypeDef  DeInitStateMachine(USBH_HandleTypeDef *phost);
 #if (USBH_USE_OS == 1)  
 static void USBH_Process_OS(void const * argument);
 #endif
+uint8_t encapsulated_buf[BUF_SIZE];
+
+typedef enum host_class_request_state{
+	SEND_INIT_MSG = 0,
+	RCV_INIT_MSG,
+	QUERY_OID_SUPPORTED,
+	RCV_OID_SUPPORTED,
+	QUERY_OID_MAX_FRAME_SIZE,
+	RCV_OID_MAX_FRAME_SIZE,
+	QUERY_MAC_ADDRESS,
+	RCV_MAC_ADRESS,
+	QUERY_CONNECT_STATUS,
+	RCV_CONNECT_STATUS,
+	SEND_PACKET_FILTER
+}host_class_request_state_t;
+
+uint8_t host_class_request_index = SEND_INIT_MSG;
 
 /**
   * @brief  HCD_Init 
@@ -554,12 +571,48 @@ USBH_StatusTypeDef  USBH_Process(USBH_HandleTypeDef *phost)
     /* process class standard control requests state machine */
     if(phost->pActiveClass != NULL)
     {
-      status = phost->pActiveClass->Requests(phost);
-      
-      if(status == USBH_OK)
-      {
-        phost->gState  = HOST_CLASS;        
-      }  
+			switch(host_class_request_index)
+			{
+				case SEND_INIT_MSG : 
+						//status = phost->pActiveClass->Requests(phost);
+					status = USBH_RNDIS_Send_Initialisation_Message(phost);
+					if(status != USBH_OK)
+					{
+						return status;
+					} 
+					host_class_request_index++;
+				break;
+					
+				case RCV_INIT_MSG : 
+					status = USBH_RNDIS_Get_Initialisation_Complete(phost);
+					if(status != USBH_OK)
+					{
+						return status;	
+					}		
+					
+					host_class_request_index ++;
+				break;
+				
+				case QUERY_OID_SUPPORTED : 
+				break;
+				case RCV_OID_SUPPORTED :
+				break;
+				case QUERY_OID_MAX_FRAME_SIZE:
+				break;
+				case RCV_OID_MAX_FRAME_SIZE :
+				break;
+				case QUERY_MAC_ADDRESS:
+				break;
+				case RCV_MAC_ADRESS:
+				break;
+				case QUERY_CONNECT_STATUS:
+				break;
+				case RCV_CONNECT_STATUS:
+				break;
+				case SEND_PACKET_FILTER: 
+					phost->gState = HOST_CLASS;
+				break;
+			}
     }
     else
     {

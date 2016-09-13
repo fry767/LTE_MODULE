@@ -90,6 +90,7 @@ static void USBH_UserProcess  (USBH_HandleTypeDef *phost, uint8_t id)
   switch(id)
   { 
   case HOST_USER_SELECT_CONFIGURATION:
+
   break;
     
   case HOST_USER_DISCONNECTION:
