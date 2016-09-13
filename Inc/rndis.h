@@ -42,7 +42,7 @@
   */
 
 #include <stdint.h>
-#define BUF_SIZE												30
+#define BUF_SIZE												(27*4+32)
 #define USB_REQ_CDC_SEND_ENCAPSULATED   0x00
 #define USB_REQ_CDC_GET_ENCAPSULATED    0x01
 
@@ -278,6 +278,11 @@ typedef struct{
 	rndis_DeviceVcHandle_t		DeviceVcHandle;
 	rndis_Reserved_t			Reserved;
 	}rndis_data_packet_t;
+typedef struct{
+	rndis_MessageType_t		MessageType;
+	rndis_MessageLength_t	MessageLength;
+}rndis_header_t;
+
 
 typedef uint32_t rndis_ClassInformationOffset_t;
 typedef uint32_t rndis_Size_t;
@@ -322,6 +327,11 @@ USBH_StatusTypeDef USBH_RNDIS_Get_Encapsulated_Response(
                             uint8_t* messageBuff);
 USBH_StatusTypeDef USBH_RNDIS_Send_Initialisation_Message(USBH_HandleTypeDef *phost);
 USBH_StatusTypeDef USBH_RNDIS_Get_Initialisation_Complete(USBH_HandleTypeDef *phost);
-
+USBH_StatusTypeDef USBH_RNDIS_Query_Oid_Supported_List(USBH_HandleTypeDef *phost);
+USBH_StatusTypeDef USBH_RNDIS_Get_Oid_Supported_List(USBH_HandleTypeDef *phost,void* buffer);
+USBH_StatusTypeDef USBH_RNDIS_Query_Specific_Oid(USBH_HandleTypeDef *phost,uint32_t oid);
+USBH_StatusTypeDef USBH_RNDIS_Get_Specific_Oid(USBH_HandleTypeDef *phost,uint32_t oid,void* buffer);
+USBH_StatusTypeDef USBH_RNDIS_Set_Oid_Property(USBH_HandleTypeDef *phost,uint32_t oid,void* buffer);
+USBH_StatusTypeDef USBH_RNDIS_Get_SetResponse(USBH_HandleTypeDef *phost);
 
 #endif //RNDIS_H

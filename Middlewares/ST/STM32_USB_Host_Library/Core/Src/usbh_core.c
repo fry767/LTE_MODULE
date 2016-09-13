@@ -29,7 +29,7 @@
 
 #include "usbh_core.h"
 #include "rndis.h"
-
+#include "ndis.h"
 /** @addtogroup USBH_LIB
   * @{
   */
@@ -81,8 +81,10 @@ static USBH_StatusTypeDef  DeInitStateMachine(USBH_HandleTypeDef *phost);
 #if (USBH_USE_OS == 1)  
 static void USBH_Process_OS(void const * argument);
 #endif
-uint8_t encapsulated_buf[BUF_SIZE];
 
+#define ETH_HEADER_SIZE             14
+#define RNDIS_RX_BUFFER_SIZE        (ETH_MAX_PACKET_SIZE + sizeof(rndis_data_packet_t))
+#define PACKET_FILTER								(NDIS_PACKET_TYPE_BROADCAST | NDIS_PACKET_TYPE_MULTICAST| NDIS_PACKET_TYPE_DIRECTED)
 typedef enum host_class_request_state{
 	SEND_INIT_MSG = 0,
 	RCV_INIT_MSG,
@@ -94,11 +96,14 @@ typedef enum host_class_request_state{
 	RCV_MAC_ADRESS,
 	QUERY_CONNECT_STATUS,
 	RCV_CONNECT_STATUS,
-	SEND_PACKET_FILTER
+	SEND_PACKET_FILTER,
+	RCV_PACKET_FILTER_RESPONSE
 }host_class_request_state_t;
 
 uint8_t host_class_request_index = SEND_INIT_MSG;
-
+uint32_t*	oid_supported_buf;
+uint8_t RNDIS_Data_buf[27*4];
+uint32_t data_to_set = 0;
 /**
   * @brief  HCD_Init 
   *         Initialize the HOST Core.
@@ -594,22 +599,75 @@ USBH_StatusTypeDef  USBH_Process(USBH_HandleTypeDef *phost)
 				break;
 				
 				case QUERY_OID_SUPPORTED : 
+					status = USBH_RNDIS_Query_Specific_Oid(phost,OID_GEN_SUPPORTED_LIST);
+					if(status!=USBH_OK)
+						return status;
+					host_class_request_index ++;
 				break;
 				case RCV_OID_SUPPORTED :
+					status = USBH_RNDIS_Get_Specific_Oid(phost,OID_GEN_SUPPORTED_LIST,RNDIS_Data_buf);
+					if(status != USBH_OK)
+					{
+						return status;	
+					}		
+					host_class_request_index ++;
 				break;
 				case QUERY_OID_MAX_FRAME_SIZE:
+					status = USBH_RNDIS_Query_Specific_Oid(phost,OID_GEN_MAXIMUM_FRAME_SIZE);
+					if(status!=USBH_OK)
+						return status;
+					host_class_request_index ++;
 				break;
 				case RCV_OID_MAX_FRAME_SIZE :
+					status = USBH_RNDIS_Get_Specific_Oid(phost,OID_GEN_MAXIMUM_FRAME_SIZE,RNDIS_Data_buf);
+					if(status != USBH_OK)
+					{
+						return status;	
+					}		
+					host_class_request_index ++;
 				break;
 				case QUERY_MAC_ADDRESS:
+					status = USBH_RNDIS_Query_Specific_Oid(phost,OID_802_3_CURRENT_ADDRESS);
+					if(status!=USBH_OK)
+						return status;
+					host_class_request_index ++;
 				break;
 				case RCV_MAC_ADRESS:
+					status = USBH_RNDIS_Get_Specific_Oid(phost,OID_802_3_CURRENT_ADDRESS,RNDIS_Data_buf);
+					if(status != USBH_OK)
+					{
+						return status;	
+					}		
+					host_class_request_index ++;
 				break;
 				case QUERY_CONNECT_STATUS:
+					status = USBH_RNDIS_Query_Specific_Oid(phost,OID_GEN_MEDIA_CONNECT_STATUS);
+					if(status!=USBH_OK)
+						return status;
+					host_class_request_index ++;
 				break;
 				case RCV_CONNECT_STATUS:
+					status = USBH_RNDIS_Get_Specific_Oid(phost,OID_GEN_MEDIA_CONNECT_STATUS,RNDIS_Data_buf);
+					if(status != USBH_OK)
+					{
+						return status;	
+					}		
+					host_class_request_index ++;
 				break;
-				case SEND_PACKET_FILTER: 
+				case SEND_PACKET_FILTER : 
+					data_to_set = PACKET_FILTER;
+					status = USBH_RNDIS_Set_Oid_Property(phost,OID_GEN_CURRENT_PACKET_FILTER,(uint8_t *)&data_to_set);
+					if(status != USBH_OK)
+					{
+						return status;	
+					}	
+					host_class_request_index ++;
+				break;
+				case RCV_PACKET_FILTER_RESPONSE :
+					status = USBH_RNDIS_Get_SetResponse(phost);
+					if(status!=USBH_OK)
+						return status;
+					host_class_request_index = SEND_INIT_MSG;
 					phost->gState = HOST_CLASS;
 				break;
 			}
