@@ -2,6 +2,7 @@
 #define RNDIS_H
 
 #include "usbh_core.h"
+#include "usbh_cdc.h"
 /**
  * \file rndis_protocol.h
  *         RNDIS Defines
@@ -278,6 +279,7 @@ typedef struct{
 	rndis_DeviceVcHandle_t		DeviceVcHandle;
 	rndis_Reserved_t			Reserved;
 	}rndis_data_packet_t;
+
 typedef struct{
 	rndis_MessageType_t		MessageType;
 	rndis_MessageLength_t	MessageLength;
@@ -305,6 +307,12 @@ typedef struct query_message_data{
 	rndis_query_cmplt_t query_msg;
 	uint8_t							buffer[BUF_SIZE - 24];
 }query_msg_data_t;
+
+	typedef struct set_msg_data{
+		rndis_set_msg_t set_msg;
+		uint8_t txBuffer[4*8];
+	}set_msg_data_t;
+
 typedef enum rndis_usb_state {
 	RNDIS_USBH_OK = 0,
 	RNDIS_USBH_BUSY,

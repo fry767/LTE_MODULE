@@ -84,7 +84,7 @@ static void USBH_Process_OS(void const * argument);
 
 #define ETH_HEADER_SIZE             14
 #define RNDIS_RX_BUFFER_SIZE        (ETH_MAX_PACKET_SIZE + sizeof(rndis_data_packet_t))
-#define PACKET_FILTER								(NDIS_PACKET_TYPE_BROADCAST | NDIS_PACKET_TYPE_MULTICAST| NDIS_PACKET_TYPE_DIRECTED)
+
 typedef enum host_class_request_state{
 	SEND_INIT_MSG = 0,
 	RCV_INIT_MSG,
@@ -97,10 +97,13 @@ typedef enum host_class_request_state{
 	QUERY_CONNECT_STATUS,
 	RCV_CONNECT_STATUS,
 	SEND_PACKET_FILTER,
-	RCV_PACKET_FILTER_RESPONSE
+	RCV_PACKET_FILTER_RESPONSE,
+	QUERY_PACKET_FILTER,
+	RCV_PACKET_FILTER
 }host_class_request_state_t;
 
 uint8_t host_class_request_index = SEND_INIT_MSG;
+uint8_t usbh_busy_index = 0;
 uint32_t*	oid_supported_buf;
 uint8_t RNDIS_Data_buf[27*4];
 uint32_t data_to_set = 0;
@@ -578,6 +581,10 @@ USBH_StatusTypeDef  USBH_Process(USBH_HandleTypeDef *phost)
     {
 			switch(host_class_request_index)
 			{
+				uint8_t device_max_frame_size[4];
+				uint8_t device_connect_status[4];
+				uint8_t device_packet_filter[4];
+				uint8_t device_mac_adress[6];
 				case SEND_INIT_MSG : 
 						//status = phost->pActiveClass->Requests(phost);
 					status = USBH_RNDIS_Send_Initialisation_Message(phost);
@@ -592,10 +599,11 @@ USBH_StatusTypeDef  USBH_Process(USBH_HandleTypeDef *phost)
 					status = USBH_RNDIS_Get_Initialisation_Complete(phost);
 					if(status != USBH_OK)
 					{
+						
 						return status;	
 					}		
 					
-					host_class_request_index ++;
+					host_class_request_index +=3;
 				break;
 				
 				case QUERY_OID_SUPPORTED : 
@@ -607,10 +615,12 @@ USBH_StatusTypeDef  USBH_Process(USBH_HandleTypeDef *phost)
 				case RCV_OID_SUPPORTED :
 					status = USBH_RNDIS_Get_Specific_Oid(phost,OID_GEN_SUPPORTED_LIST,RNDIS_Data_buf);
 					if(status != USBH_OK)
-					{
+					{		
 						return status;	
+						
 					}		
 					host_class_request_index ++;
+					
 				break;
 				case QUERY_OID_MAX_FRAME_SIZE:
 					status = USBH_RNDIS_Query_Specific_Oid(phost,OID_GEN_MAXIMUM_FRAME_SIZE);
@@ -619,11 +629,11 @@ USBH_StatusTypeDef  USBH_Process(USBH_HandleTypeDef *phost)
 					host_class_request_index ++;
 				break;
 				case RCV_OID_MAX_FRAME_SIZE :
-					status = USBH_RNDIS_Get_Specific_Oid(phost,OID_GEN_MAXIMUM_FRAME_SIZE,RNDIS_Data_buf);
+					status = USBH_RNDIS_Get_Specific_Oid(phost,OID_GEN_MAXIMUM_FRAME_SIZE,device_max_frame_size);
 					if(status != USBH_OK)
 					{
 						return status;	
-					}		
+					}	
 					host_class_request_index ++;
 				break;
 				case QUERY_MAC_ADDRESS:
@@ -633,11 +643,12 @@ USBH_StatusTypeDef  USBH_Process(USBH_HandleTypeDef *phost)
 					host_class_request_index ++;
 				break;
 				case RCV_MAC_ADRESS:
-					status = USBH_RNDIS_Get_Specific_Oid(phost,OID_802_3_CURRENT_ADDRESS,RNDIS_Data_buf);
+					status = USBH_RNDIS_Get_Specific_Oid(phost,OID_802_3_CURRENT_ADDRESS,device_mac_adress);
 					if(status != USBH_OK)
 					{
 						return status;	
 					}		
+
 					host_class_request_index ++;
 				break;
 				case QUERY_CONNECT_STATUS:
@@ -647,16 +658,17 @@ USBH_StatusTypeDef  USBH_Process(USBH_HandleTypeDef *phost)
 					host_class_request_index ++;
 				break;
 				case RCV_CONNECT_STATUS:
-					status = USBH_RNDIS_Get_Specific_Oid(phost,OID_GEN_MEDIA_CONNECT_STATUS,RNDIS_Data_buf);
+					status = USBH_RNDIS_Get_Specific_Oid(phost,OID_GEN_MEDIA_CONNECT_STATUS,device_connect_status);
 					if(status != USBH_OK)
 					{
 						return status;	
 					}		
+					
 					host_class_request_index ++;
 				break;
 				case SEND_PACKET_FILTER : 
 					data_to_set = PACKET_FILTER;
-					status = USBH_RNDIS_Set_Oid_Property(phost,OID_GEN_CURRENT_PACKET_FILTER,(uint8_t *)&data_to_set);
+					status = USBH_RNDIS_Set_Oid_Property(phost,OID_GEN_CURRENT_PACKET_FILTER,&data_to_set);
 					if(status != USBH_OK)
 					{
 						return status;	
@@ -666,8 +678,32 @@ USBH_StatusTypeDef  USBH_Process(USBH_HandleTypeDef *phost)
 				case RCV_PACKET_FILTER_RESPONSE :
 					status = USBH_RNDIS_Get_SetResponse(phost);
 					if(status!=USBH_OK)
+					{
 						return status;
+					}
+					host_class_request_index ++;	
+				break;
+				case QUERY_PACKET_FILTER :
+					status = USBH_RNDIS_Query_Specific_Oid(phost,OID_GEN_CURRENT_PACKET_FILTER);
+					if(status!=USBH_OK)
+						return status;
+					host_class_request_index ++;
+				break;
+				case RCV_PACKET_FILTER:
+
+					status = USBH_RNDIS_Get_Specific_Oid(phost,OID_GEN_MEDIA_CONNECT_STATUS,device_packet_filter);
+					
+					if(status != USBH_OK)
+					{
+						return status;	
+					}
+					if((device_packet_filter[3]|device_packet_filter[2]|device_packet_filter[1]|device_packet_filter[0])!=PACKET_FILTER)
+					{
+						host_class_request_index = SEND_PACKET_FILTER;
+						return status;
+					}
 					host_class_request_index = SEND_INIT_MSG;
+					phost->pUser(phost, HOST_USER_CLASS_ACTIVE); 
 					phost->gState = HOST_CLASS;
 				break;
 			}

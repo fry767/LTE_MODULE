@@ -1,6 +1,7 @@
 #include "rndis.h"
 #include "ndis.h"
 
+
 uint8_t encap_buf[BUF_SIZE];
 
 USBH_StatusTypeDef USBH_RNDIS_Send_Encapsulated_Command(
@@ -37,6 +38,7 @@ USBH_StatusTypeDef USBH_RNDIS_Get_Encapsulated_Response(
 }
 USBH_StatusTypeDef USBH_RNDIS_Send_Initialisation_Message(USBH_HandleTypeDef *phost)
 {
+	//memset(encap_buf,0,sizeof(encap_buf));
 	rndis_initialize_msg_t *initialisation_message;
 	
 	
@@ -53,6 +55,7 @@ USBH_StatusTypeDef USBH_RNDIS_Send_Initialisation_Message(USBH_HandleTypeDef *ph
 }
 USBH_StatusTypeDef USBH_RNDIS_Get_Initialisation_Complete(USBH_HandleTypeDef *phost)
 {
+	//memset(encap_buf,0,sizeof(encap_buf));
 	rndis_initialize_cmplt_t *rcv_msg;
 	rcv_msg = (rndis_initialize_cmplt_t *)encap_buf;
 	__IO USBH_StatusTypeDef status = USBH_FAIL;
@@ -72,6 +75,7 @@ USBH_StatusTypeDef USBH_RNDIS_Get_Initialisation_Complete(USBH_HandleTypeDef *ph
 }
 USBH_StatusTypeDef USBH_RNDIS_Query_Oid_Supported_List(USBH_HandleTypeDef *phost)
 {
+	//memset(encap_buf,0,sizeof(encap_buf));
 	rndis_query_msg_t *query_msg;
 	query_msg = (rndis_query_msg_t *)encap_buf;
 	query_msg->MessageType = REMOTE_NDIS_QUERY_MSG;
@@ -87,6 +91,7 @@ USBH_StatusTypeDef USBH_RNDIS_Query_Oid_Supported_List(USBH_HandleTypeDef *phost
 }
 USBH_StatusTypeDef USBH_RNDIS_Get_Oid_Supported_List(USBH_HandleTypeDef *phost,void* buffer)
 {
+	//memset(encap_buf,0,sizeof(encap_buf));
 		struct
 		{
 			rndis_query_cmplt_t query_msg;
@@ -108,6 +113,7 @@ USBH_StatusTypeDef USBH_RNDIS_Get_Oid_Supported_List(USBH_HandleTypeDef *phost,v
 }
 USBH_StatusTypeDef USBH_RNDIS_Query_Specific_Oid(USBH_HandleTypeDef *phost,uint32_t oid)
 {
+	//memset(encap_buf,0,sizeof(encap_buf));
 	rndis_query_msg_t *query_msg;
 	query_msg = (rndis_query_msg_t *)encap_buf;
 	query_msg->MessageType = REMOTE_NDIS_QUERY_MSG;
@@ -122,13 +128,14 @@ USBH_StatusTypeDef USBH_RNDIS_Query_Specific_Oid(USBH_HandleTypeDef *phost,uint3
 }
 USBH_StatusTypeDef USBH_RNDIS_Get_Specific_Oid(USBH_HandleTypeDef *phost,uint32_t oid,void* buffer)
 {
+	//memset(&encap_buf,0,sizeof(encap_buf));
 	 query_msg_data_t* response_msg;
 		
 	 response_msg = (query_msg_data_t*)encap_buf;
 		
 	__IO USBH_StatusTypeDef status = USBH_FAIL;
 		
-	status = USBH_RNDIS_Get_Encapsulated_Response(phost,sizeof(query_msg_data_t),encap_buf);
+	status = USBH_RNDIS_Get_Encapsulated_Response(phost,(sizeof(rndis_query_cmplt_t)+sizeof(buffer)),encap_buf);
 		
 	if(status != RNDIS_USBH_OK)
 		return status;
@@ -141,26 +148,25 @@ USBH_StatusTypeDef USBH_RNDIS_Get_Specific_Oid(USBH_HandleTypeDef *phost,uint32_
 }
 USBH_StatusTypeDef USBH_RNDIS_Set_Oid_Property(USBH_HandleTypeDef *phost,uint32_t oid,void* buffer)
 {
-	struct
-	{
-		rndis_set_msg_t set_msg;
-		uint8_t txBuffer[sizeof(buffer)];
-	}set_msg_data;
+	//memset(encap_buf,0,sizeof(encap_buf));
+	set_msg_data_t* set_msg;
+	set_msg = (set_msg_data_t*)encap_buf;
 	
-	set_msg_data.set_msg.MessageType = REMOTE_NDIS_SET_MSG;
-	set_msg_data.set_msg.MessageLength = sizeof(rndis_set_msg_t)+sizeof(buffer);
-	set_msg_data.set_msg.RequestId = phost->gState;
-	set_msg_data.set_msg.Oid = oid;
-	set_msg_data.set_msg.InformationBufferLength = sizeof(buffer);
-	set_msg_data.set_msg.InformationBufferOffset = 0x10;
-	set_msg_data.set_msg.DeviceVcHandle = 0;
+	set_msg->set_msg.MessageType = REMOTE_NDIS_SET_MSG;
+	set_msg->set_msg.MessageLength = (sizeof(rndis_set_msg_t) + sizeof(buffer));
+	set_msg->set_msg.RequestId = phost->gState;
+	set_msg->set_msg.Oid = oid;
+	set_msg->set_msg.InformationBufferLength = sizeof(buffer);
+	set_msg->set_msg.InformationBufferOffset = 0x10;
+	set_msg->set_msg.DeviceVcHandle = 0;
 	
-	memcpy(&set_msg_data.txBuffer,buffer,sizeof(buffer));
+	memcpy(&(set_msg->txBuffer),buffer,sizeof(buffer));
 	
-	return USBH_RNDIS_Send_Encapsulated_Command(phost,set_msg_data.set_msg.MessageLength,(uint8_t *)&set_msg_data);
+	return USBH_RNDIS_Send_Encapsulated_Command(phost,(sizeof(rndis_set_msg_t) + sizeof(buffer)),encap_buf);
 }
 USBH_StatusTypeDef USBH_RNDIS_Get_SetResponse(USBH_HandleTypeDef *phost)
 {
+	//memset(encap_buf,0,sizeof(encap_buf));
 	rndis_set_cmplt_t* set_response;
 	set_response = (rndis_set_cmplt_t *)encap_buf;
 	
@@ -179,3 +185,16 @@ USBH_StatusTypeDef USBH_RNDIS_Get_SetResponse(USBH_HandleTypeDef *phost)
 	
 	
 }
+USBH_StatusTypeDef USBH_RNDIS_Send_Bulk(USBH_HandleTypeDef *phost,void* buffer)
+{
+	rndis_data_packet_t* data_msg_to_send;
+	memset(data_msg_to_send,0,sizeof(rndis_data_packet_t));
+	
+	data_msg_to_send->MessageType = REMOTE_NDIS_PACKET_MSG;
+	data_msg_to_send->MessageLength = sizeof(rndis_data_packet_t) + sizeof(buffer);
+	data_msg_to_send->DataOffset = sizeof(rndis_data_packet_t) - sizeof(rndis_header_t);
+	data_msg_to_send->DataLength = sizeof(buffer);
+	
+	return USBH_CDC_Transmit(phost,buffer,sizeof(buffer));
+}
+	

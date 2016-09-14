@@ -41,4 +41,5 @@ test_usb_slave\usbh_core.o: ../Middlewares/ST/STM32_USB_Host_Library/Core/Inc/us
 test_usb_slave\usbh_core.o: ../Middlewares/ST/STM32_USB_Host_Library/Core/Inc/usbh_pipes.h
 test_usb_slave\usbh_core.o: ../Middlewares/ST/STM32_USB_Host_Library/Core/Inc/usbh_ctlreq.h
 test_usb_slave\usbh_core.o: ../Inc/rndis.h
+test_usb_slave\usbh_core.o: ../Middlewares/ST/STM32_USB_Host_Library/Class/CDC/Inc/usbh_cdc.h
 test_usb_slave\usbh_core.o: ../Inc/ndis.h

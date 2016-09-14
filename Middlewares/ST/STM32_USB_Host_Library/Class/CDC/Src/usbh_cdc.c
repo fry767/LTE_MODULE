@@ -47,6 +47,8 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include "usbh_cdc.h"
+#include "rndis.h"
+#include "ndis.h"
 
 /** @addtogroup USBH_LIB
 * @{
@@ -133,6 +135,7 @@ USBH_ClassTypeDef  CDC_Class =
   USBH_CDC_SOFProcess,
   NULL,
 };
+uint8_t cdc_index = 0;
 /**
 * @}
 */ 
@@ -333,17 +336,21 @@ static USBH_StatusTypeDef USBH_CDC_Process (USBH_HandleTypeDef *phost)
   USBH_StatusTypeDef status = USBH_BUSY;
   USBH_StatusTypeDef req_status = USBH_OK;
   CDC_HandleTypeDef *CDC_Handle =  (CDC_HandleTypeDef*) phost->pActiveClass->pData; 
-  
+  uint32_t Current_Packet_Filter = 0;
+	
   switch(CDC_Handle->state)
   {
-    
   case CDC_IDLE_STATE:
+		if(cdc_index == 0)
+		{
+			CDC_Handle->state = CDC_SET_LINE_CODING_STATE;
+			cdc_index ++;
+		}		
     status = USBH_OK;
     break;
     
   case CDC_SET_LINE_CODING_STATE:
-    req_status = SetLineCoding(phost, CDC_Handle->pUserLineCoding);
-    
+		req_status = USBH_RNDIS_Query_Specific_Oid(phost,OID_GEN_CURRENT_PACKET_FILTER);
     if(req_status == USBH_OK)
     {
       CDC_Handle->state = CDC_GET_LAST_LINE_CODING_STATE; 
@@ -357,19 +364,11 @@ static USBH_StatusTypeDef USBH_CDC_Process (USBH_HandleTypeDef *phost)
     
     
   case CDC_GET_LAST_LINE_CODING_STATE:
-    req_status = GetLineCoding(phost, &(CDC_Handle->LineCoding));
+   req_status = USBH_RNDIS_Get_Specific_Oid(phost,OID_GEN_CURRENT_PACKET_FILTER,&Current_Packet_Filter);
     
-    if(req_status == USBH_OK)
+    if(req_status == USBH_OK && Current_Packet_Filter == PACKET_FILTER)
     {
       CDC_Handle->state = CDC_IDLE_STATE; 
-      
-      if((CDC_Handle->LineCoding.b.bCharFormat == CDC_Handle->pUserLineCoding->b.bCharFormat) && 
-         (CDC_Handle->LineCoding.b.bDataBits == CDC_Handle->pUserLineCoding->b.bDataBits) &&
-         (CDC_Handle->LineCoding.b.bParityType == CDC_Handle->pUserLineCoding->b.bParityType) &&
-         (CDC_Handle->LineCoding.b.dwDTERate == CDC_Handle->pUserLineCoding->b.dwDTERate))
-      {
-        USBH_CDC_LineCodingChanged(phost);
-      }
     }
     
     else if(req_status != USBH_BUSY)

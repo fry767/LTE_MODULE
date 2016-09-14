@@ -173,6 +173,10 @@
       <TargetDriverDllRegistry>
         <SetRegEntry>
           <Number>0</Number>
+          <Key>DLGUARM</Key>
+        </SetRegEntry>
+        <SetRegEntry>
+          <Number>0</Number>
           <Key>ARMRTXEVENTFLAGS</Key>
           <Name>-L70 -Z18 -C0 -M0 -T1</Name>
         </SetRegEntry>
@@ -185,10 +189,6 @@
           <Number>0</Number>
           <Key>ARMDBGFLAGS</Key>
           <Name></Name>
-        </SetRegEntry>
-        <SetRegEntry>
-          <Number>0</Number>
-          <Key>DLGUARM</Key>
         </SetRegEntry>
         <SetRegEntry>
           <Number>0</Number>
@@ -210,9 +210,9 @@
         <Bp>
           <Number>0</Number>
           <Type>0</Type>
-          <LineNumber>655</LineNumber>
+          <LineNumber>667</LineNumber>
           <EnabledFlag>1</EnabledFlag>
-          <Address>134235750</Address>
+          <Address>134235702</Address>
           <ByteObject>0</ByteObject>
           <HtxType>0</HtxType>
           <ManyObjects>0</ManyObjects>
@@ -221,14 +221,14 @@
           <BreakIfRCount>1</BreakIfRCount>
           <Filename>../Middlewares/ST/STM32_USB_Host_Library/Core/Src/usbh_core.c</Filename>
           <ExecCommand></ExecCommand>
-          <Expression>\\test_usb_slave\../Middlewares/ST/STM32_USB_Host_Library/Core/Src/usbh_core.c\655</Expression>
+          <Expression>\\test_usb_slave\../Middlewares/ST/STM32_USB_Host_Library/Core/Src/usbh_core.c\667</Expression>
         </Bp>
         <Bp>
           <Number>1</Number>
           <Type>0</Type>
-          <LineNumber>641</LineNumber>
+          <LineNumber>700</LineNumber>
           <EnabledFlag>1</EnabledFlag>
-          <Address>134235676</Address>
+          <Address>134235854</Address>
           <ByteObject>0</ByteObject>
           <HtxType>0</HtxType>
           <ManyObjects>0</ManyObjects>
@@ -237,30 +237,30 @@
           <BreakIfRCount>1</BreakIfRCount>
           <Filename>../Middlewares/ST/STM32_USB_Host_Library/Core/Src/usbh_core.c</Filename>
           <ExecCommand></ExecCommand>
-          <Expression>\\test_usb_slave\../Middlewares/ST/STM32_USB_Host_Library/Core/Src/usbh_core.c\641</Expression>
+          <Expression>\\test_usb_slave\../Middlewares/ST/STM32_USB_Host_Library/Core/Src/usbh_core.c\700</Expression>
         </Bp>
         <Bp>
           <Number>2</Number>
           <Type>0</Type>
-          <LineNumber>627</LineNumber>
+          <LineNumber>320</LineNumber>
           <EnabledFlag>1</EnabledFlag>
-          <Address>134235606</Address>
+          <Address>134231584</Address>
           <ByteObject>0</ByteObject>
           <HtxType>0</HtxType>
           <ManyObjects>0</ManyObjects>
           <SizeOfObject>0</SizeOfObject>
           <BreakByAccess>0</BreakByAccess>
           <BreakIfRCount>1</BreakIfRCount>
-          <Filename>../Middlewares/ST/STM32_USB_Host_Library/Core/Src/usbh_core.c</Filename>
+          <Filename>../Middlewares/ST/STM32_USB_Host_Library/Class/CDC/Src/usbh_cdc.c</Filename>
           <ExecCommand></ExecCommand>
-          <Expression>\\test_usb_slave\../Middlewares/ST/STM32_USB_Host_Library/Core/Src/usbh_core.c\627</Expression>
+          <Expression>\\test_usb_slave\../Middlewares/ST/STM32_USB_Host_Library/Class/CDC/Src/usbh_cdc.c\320</Expression>
         </Bp>
         <Bp>
           <Number>3</Number>
           <Type>0</Type>
           <LineNumber>319</LineNumber>
           <EnabledFlag>1</EnabledFlag>
-          <Address>134231622</Address>
+          <Address>134231572</Address>
           <ByteObject>0</ByteObject>
           <HtxType>0</HtxType>
           <ManyObjects>0</ManyObjects>
@@ -273,86 +273,6 @@
         </Bp>
         <Bp>
           <Number>4</Number>
-          <Type>0</Type>
-          <LineNumber>633</LineNumber>
-          <EnabledFlag>1</EnabledFlag>
-          <Address>134235640</Address>
-          <ByteObject>0</ByteObject>
-          <HtxType>0</HtxType>
-          <ManyObjects>0</ManyObjects>
-          <SizeOfObject>0</SizeOfObject>
-          <BreakByAccess>0</BreakByAccess>
-          <BreakIfRCount>1</BreakIfRCount>
-          <Filename>../Middlewares/ST/STM32_USB_Host_Library/Core/Src/usbh_core.c</Filename>
-          <ExecCommand></ExecCommand>
-          <Expression>\\test_usb_slave\../Middlewares/ST/STM32_USB_Host_Library/Core/Src/usbh_core.c\633</Expression>
-        </Bp>
-        <Bp>
-          <Number>5</Number>
-          <Type>0</Type>
-          <LineNumber>619</LineNumber>
-          <EnabledFlag>1</EnabledFlag>
-          <Address>134235566</Address>
-          <ByteObject>0</ByteObject>
-          <HtxType>0</HtxType>
-          <ManyObjects>0</ManyObjects>
-          <SizeOfObject>0</SizeOfObject>
-          <BreakByAccess>0</BreakByAccess>
-          <BreakIfRCount>1</BreakIfRCount>
-          <Filename>../Middlewares/ST/STM32_USB_Host_Library/Core/Src/usbh_core.c</Filename>
-          <ExecCommand></ExecCommand>
-          <Expression>\\test_usb_slave\../Middlewares/ST/STM32_USB_Host_Library/Core/Src/usbh_core.c\619</Expression>
-        </Bp>
-        <Bp>
-          <Number>6</Number>
-          <Type>0</Type>
-          <LineNumber>613</LineNumber>
-          <EnabledFlag>1</EnabledFlag>
-          <Address>134235524</Address>
-          <ByteObject>0</ByteObject>
-          <HtxType>0</HtxType>
-          <ManyObjects>0</ManyObjects>
-          <SizeOfObject>0</SizeOfObject>
-          <BreakByAccess>0</BreakByAccess>
-          <BreakIfRCount>1</BreakIfRCount>
-          <Filename>../Middlewares/ST/STM32_USB_Host_Library/Core/Src/usbh_core.c</Filename>
-          <ExecCommand></ExecCommand>
-          <Expression>\\test_usb_slave\../Middlewares/ST/STM32_USB_Host_Library/Core/Src/usbh_core.c\613</Expression>
-        </Bp>
-        <Bp>
-          <Number>7</Number>
-          <Type>0</Type>
-          <LineNumber>605</LineNumber>
-          <EnabledFlag>1</EnabledFlag>
-          <Address>134235488</Address>
-          <ByteObject>0</ByteObject>
-          <HtxType>0</HtxType>
-          <ManyObjects>0</ManyObjects>
-          <SizeOfObject>0</SizeOfObject>
-          <BreakByAccess>0</BreakByAccess>
-          <BreakIfRCount>1</BreakIfRCount>
-          <Filename>../Middlewares/ST/STM32_USB_Host_Library/Core/Src/usbh_core.c</Filename>
-          <ExecCommand></ExecCommand>
-          <Expression>\\test_usb_slave\../Middlewares/ST/STM32_USB_Host_Library/Core/Src/usbh_core.c\605</Expression>
-        </Bp>
-        <Bp>
-          <Number>8</Number>
-          <Type>0</Type>
-          <LineNumber>647</LineNumber>
-          <EnabledFlag>1</EnabledFlag>
-          <Address>134235712</Address>
-          <ByteObject>0</ByteObject>
-          <HtxType>0</HtxType>
-          <ManyObjects>0</ManyObjects>
-          <SizeOfObject>0</SizeOfObject>
-          <BreakByAccess>0</BreakByAccess>
-          <BreakIfRCount>1</BreakIfRCount>
-          <Filename>../Middlewares/ST/STM32_USB_Host_Library/Core/Src/usbh_core.c</Filename>
-          <ExecCommand></ExecCommand>
-          <Expression>\\test_usb_slave\../Middlewares/ST/STM32_USB_Host_Library/Core/Src/usbh_core.c\647</Expression>
-        </Bp>
-        <Bp>
-          <Number>9</Number>
           <Type>0</Type>
           <LineNumber>70</LineNumber>
           <EnabledFlag>1</EnabledFlag>
@@ -368,27 +288,43 @@
           <Expression>\\test_usb_slave\../Src/stm32f4xx_it.c\70</Expression>
         </Bp>
         <Bp>
-          <Number>10</Number>
+          <Number>5</Number>
           <Type>0</Type>
-          <LineNumber>664</LineNumber>
+          <LineNumber>163</LineNumber>
           <EnabledFlag>1</EnabledFlag>
-          <Address>134235794</Address>
+          <Address>134236426</Address>
           <ByteObject>0</ByteObject>
           <HtxType>0</HtxType>
           <ManyObjects>0</ManyObjects>
           <SizeOfObject>0</SizeOfObject>
           <BreakByAccess>0</BreakByAccess>
           <BreakIfRCount>1</BreakIfRCount>
-          <Filename>../Middlewares/ST/STM32_USB_Host_Library/Core/Src/usbh_core.c</Filename>
+          <Filename>..\Middlewares\Third_Party\RNDIS\rndis.c</Filename>
           <ExecCommand></ExecCommand>
-          <Expression>\\test_usb_slave\../Middlewares/ST/STM32_USB_Host_Library/Core/Src/usbh_core.c\664</Expression>
+          <Expression>\\test_usb_slave\../Middlewares/Third_Party/RNDIS/rndis.c\163</Expression>
         </Bp>
         <Bp>
-          <Number>11</Number>
+          <Number>6</Number>
           <Type>0</Type>
-          <LineNumber>670</LineNumber>
+          <LineNumber>676</LineNumber>
           <EnabledFlag>1</EnabledFlag>
-          <Address>134235826</Address>
+          <Address>134233244</Address>
+          <ByteObject>0</ByteObject>
+          <HtxType>0</HtxType>
+          <ManyObjects>0</ManyObjects>
+          <SizeOfObject>0</SizeOfObject>
+          <BreakByAccess>0</BreakByAccess>
+          <BreakIfRCount>1</BreakIfRCount>
+          <Filename>../Middlewares/ST/STM32_USB_Host_Library/Core/Src/usbh_ctlreq.c</Filename>
+          <ExecCommand></ExecCommand>
+          <Expression>\\test_usb_slave\../Middlewares/ST/STM32_USB_Host_Library/Core/Src/usbh_ctlreq.c\676</Expression>
+        </Bp>
+        <Bp>
+          <Number>7</Number>
+          <Type>0</Type>
+          <LineNumber>652</LineNumber>
+          <EnabledFlag>1</EnabledFlag>
+          <Address>134235628</Address>
           <ByteObject>0</ByteObject>
           <HtxType>0</HtxType>
           <ManyObjects>0</ManyObjects>
@@ -397,7 +333,39 @@
           <BreakIfRCount>1</BreakIfRCount>
           <Filename>../Middlewares/ST/STM32_USB_Host_Library/Core/Src/usbh_core.c</Filename>
           <ExecCommand></ExecCommand>
-          <Expression>\\test_usb_slave\../Middlewares/ST/STM32_USB_Host_Library/Core/Src/usbh_core.c\670</Expression>
+          <Expression>\\test_usb_slave\../Middlewares/ST/STM32_USB_Host_Library/Core/Src/usbh_core.c\652</Expression>
+        </Bp>
+        <Bp>
+          <Number>8</Number>
+          <Type>0</Type>
+          <LineNumber>637</LineNumber>
+          <EnabledFlag>1</EnabledFlag>
+          <Address>134235558</Address>
+          <ByteObject>0</ByteObject>
+          <HtxType>0</HtxType>
+          <ManyObjects>0</ManyObjects>
+          <SizeOfObject>0</SizeOfObject>
+          <BreakByAccess>0</BreakByAccess>
+          <BreakIfRCount>1</BreakIfRCount>
+          <Filename>../Middlewares/ST/STM32_USB_Host_Library/Core/Src/usbh_core.c</Filename>
+          <ExecCommand></ExecCommand>
+          <Expression>\\test_usb_slave\../Middlewares/ST/STM32_USB_Host_Library/Core/Src/usbh_core.c\637</Expression>
+        </Bp>
+        <Bp>
+          <Number>9</Number>
+          <Type>0</Type>
+          <LineNumber>146</LineNumber>
+          <EnabledFlag>1</EnabledFlag>
+          <Address>134236230</Address>
+          <ByteObject>0</ByteObject>
+          <HtxType>0</HtxType>
+          <ManyObjects>0</ManyObjects>
+          <SizeOfObject>0</SizeOfObject>
+          <BreakByAccess>0</BreakByAccess>
+          <BreakIfRCount>1</BreakIfRCount>
+          <Filename>..\Middlewares\Third_Party\RNDIS\rndis.c</Filename>
+          <ExecCommand></ExecCommand>
+          <Expression>\\test_usb_slave\../Middlewares/Third_Party/RNDIS/rndis.c\146</Expression>
         </Bp>
       </Breakpoint>
       <WatchWindow1>
@@ -425,6 +393,51 @@
           <count>4</count>
           <WinNumber>1</WinNumber>
           <ItemText>set_msg_data</ItemText>
+        </Ww>
+        <Ww>
+          <count>5</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>query_msg_data_ptr</ItemText>
+        </Ww>
+        <Ww>
+          <count>6</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>phost</ItemText>
+        </Ww>
+        <Ww>
+          <count>7</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>CDC_Handle</ItemText>
+        </Ww>
+        <Ww>
+          <count>8</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>encap_buf</ItemText>
+        </Ww>
+        <Ww>
+          <count>9</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>response_msg</ItemText>
+        </Ww>
+        <Ww>
+          <count>10</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>set_msg</ItemText>
+        </Ww>
+        <Ww>
+          <count>11</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>device_packet_filter</ItemText>
+        </Ww>
+        <Ww>
+          <count>12</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>device_connect_status</ItemText>
+        </Ww>
+        <Ww>
+          <count>13</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>buffer</ItemText>
         </Ww>
       </WatchWindow1>
       <MemoryWindow1>
