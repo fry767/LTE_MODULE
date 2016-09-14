@@ -92,10 +92,11 @@ USBH_StatusTypeDef USBH_RNDIS_Get_Oid_Supported_List(USBH_HandleTypeDef *phost,v
 			rndis_query_cmplt_t query_msg;
 			uint8_t							buffer[BUF_SIZE - 24];
 		}query_msg_data;
-	  
+		struct query_msg_data* query_msg_data_ptr;
+
 	__IO USBH_StatusTypeDef status = USBH_FAIL;
 	
-	status = USBH_RNDIS_Get_Encapsulated_Response(phost,sizeof(query_msg_data),(uint8_t*)&query_msg_data);
+	status = USBH_RNDIS_Get_Encapsulated_Response(phost,sizeof(query_msg_data),(uint8_t*)query_msg_data_ptr);
 	if(status != RNDIS_USBH_OK)
 		return status;
 	
@@ -121,23 +122,21 @@ USBH_StatusTypeDef USBH_RNDIS_Query_Specific_Oid(USBH_HandleTypeDef *phost,uint3
 }
 USBH_StatusTypeDef USBH_RNDIS_Get_Specific_Oid(USBH_HandleTypeDef *phost,uint32_t oid,void* buffer)
 {
-	struct
-		{
-			rndis_query_cmplt_t query_msg;
-			uint8_t							rcvBuffer[BUF_SIZE - 24];
-		}query_msg_data;
+	 query_msg_data_t* response_msg;
+		
+	 response_msg = (query_msg_data_t*)encap_buf;
 		
 	__IO USBH_StatusTypeDef status = USBH_FAIL;
 		
-	status = USBH_RNDIS_Get_Encapsulated_Response(phost,sizeof(query_msg_data),(uint8_t*)&query_msg_data);
+	status = USBH_RNDIS_Get_Encapsulated_Response(phost,sizeof(query_msg_data_t),encap_buf);
 		
 	if(status != RNDIS_USBH_OK)
 		return status;
 	
-	if(query_msg_data.query_msg.Status != RNDIS_STATUS_SUCCESS)
+	if(response_msg->query_msg.Status != RNDIS_STATUS_SUCCESS)
 		return RNDIS_ERROR_LOGICAL_CMD_FAILED ;
 	
-	memcpy(buffer, &query_msg_data.rcvBuffer, (query_msg_data.query_msg.InformationBufferLength));
+	memcpy(buffer,&(response_msg->buffer),(response_msg->query_msg.InformationBufferLength));
 	return status;
 }
 USBH_StatusTypeDef USBH_RNDIS_Set_Oid_Property(USBH_HandleTypeDef *phost,uint32_t oid,void* buffer)

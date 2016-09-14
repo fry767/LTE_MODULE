@@ -928,6 +928,16 @@
           </Files>
         </Group>
         <Group>
+          <GroupName>Middlewares/RNDIS</GroupName>
+          <Files>
+            <File>
+              <FileName>rndis.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Middlewares\Third_Party\RNDIS\rndis.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
           <GroupName>::CMSIS</GroupName>
         </Group>
       </Groups>

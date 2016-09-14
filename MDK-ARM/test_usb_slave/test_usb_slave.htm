@@ -3,7 +3,7 @@
 <title>Static Call Graph - [test_usb_slave\test_usb_slave.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image test_usb_slave\test_usb_slave.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060300: Last Updated: Tue Sep 13 17:39:38 2016
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060300: Last Updated: Wed Sep 14 10:03:14 2016
 <BR><P>
 <H3>Maximum Stack Usage =        620 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -923,7 +923,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[df]"></a>MX_USB_HOST_Process</STRONG> (Thumb, 10 bytes, Stack size 8 bytes, usb_host.o(i.MX_USB_HOST_Process))
-<BR><BR>[Stack]<UL><LI>Max Depth = 460<LI>Call Chain = MX_USB_HOST_Process &rArr; USBH_Process &rArr; USBH_RNDIS_Get_Specific_Oid &rArr; USBH_RNDIS_Get_Encapsulated_Response &rArr; USBH_CtlReq &rArr; USBH_HandleControl &rArr; USBH_CtlSendData &rArr; USBH_LL_SubmitURB &rArr; HAL_HCD_HC_SubmitRequest &rArr; USB_HC_StartXfer &rArr; USB_WritePacket
+<BR><BR>[Stack]<UL><LI>Max Depth = 364<LI>Call Chain = MX_USB_HOST_Process &rArr; USBH_Process &rArr; USBH_HandleEnum &rArr; USBH_Get_StringDesc &rArr; USBH_GetDescriptor &rArr; USBH_CtlReq &rArr; USBH_HandleControl &rArr; USBH_CtlSendData &rArr; USBH_LL_SubmitURB &rArr; HAL_HCD_HC_SubmitRequest &rArr; USB_HC_StartXfer &rArr; USB_WritePacket
 </UL>
 <BR>[Calls]<UL><LI><a href="#[e0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_Process
 </UL>
@@ -1279,7 +1279,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[e0]"></a>USBH_Process</STRONG> (Thumb, 868 bytes, Stack size 32 bytes, usbh_core.o(i.USBH_Process))
-<BR><BR>[Stack]<UL><LI>Max Depth = 452<LI>Call Chain = USBH_Process &rArr; USBH_RNDIS_Get_Specific_Oid &rArr; USBH_RNDIS_Get_Encapsulated_Response &rArr; USBH_CtlReq &rArr; USBH_HandleControl &rArr; USBH_CtlSendData &rArr; USBH_LL_SubmitURB &rArr; HAL_HCD_HC_SubmitRequest &rArr; USB_HC_StartXfer &rArr; USB_WritePacket
+<BR><BR>[Stack]<UL><LI>Max Depth = 356<LI>Call Chain = USBH_Process &rArr; USBH_HandleEnum &rArr; USBH_Get_StringDesc &rArr; USBH_GetDescriptor &rArr; USBH_CtlReq &rArr; USBH_HandleControl &rArr; USBH_CtlSendData &rArr; USBH_LL_SubmitURB &rArr; HAL_HCD_HC_SubmitRequest &rArr; USB_HC_StartXfer &rArr; USB_WritePacket
 </UL>
 <BR>[Calls]<UL><LI><a href="#[10b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_LL_ResetPort
 <LI><a href="#[106]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_LL_GetSpeed
@@ -1325,8 +1325,8 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[e0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_Process
 </UL>
 
-<P><STRONG><a name="[113]"></a>USBH_RNDIS_Get_Specific_Oid</STRONG> (Thumb, 64 bytes, Stack size 160 bytes, rndis.o(i.USBH_RNDIS_Get_Specific_Oid))
-<BR><BR>[Stack]<UL><LI>Max Depth = 420<LI>Call Chain = USBH_RNDIS_Get_Specific_Oid &rArr; USBH_RNDIS_Get_Encapsulated_Response &rArr; USBH_CtlReq &rArr; USBH_HandleControl &rArr; USBH_CtlSendData &rArr; USBH_LL_SubmitURB &rArr; HAL_HCD_HC_SubmitRequest &rArr; USB_HC_StartXfer &rArr; USB_WritePacket
+<P><STRONG><a name="[113]"></a>USBH_RNDIS_Get_Specific_Oid</STRONG> (Thumb, 64 bytes, Stack size 24 bytes, rndis.o(i.USBH_RNDIS_Get_Specific_Oid))
+<BR><BR>[Stack]<UL><LI>Max Depth = 284<LI>Call Chain = USBH_RNDIS_Get_Specific_Oid &rArr; USBH_RNDIS_Get_Encapsulated_Response &rArr; USBH_CtlReq &rArr; USBH_HandleControl &rArr; USBH_CtlSendData &rArr; USBH_LL_SubmitURB &rArr; HAL_HCD_HC_SubmitRequest &rArr; USB_HC_StartXfer &rArr; USB_WritePacket
 </UL>
 <BR>[Calls]<UL><LI><a href="#[117]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
 <LI><a href="#[116]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_RNDIS_Get_Encapsulated_Response

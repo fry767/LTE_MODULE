@@ -301,7 +301,10 @@ typedef enum rnids_state_e {
 	rndis_initialized,
 	rndis_data_initialized
 	} rndis_state_t;
-
+typedef struct query_message_data{
+	rndis_query_cmplt_t query_msg;
+	uint8_t							buffer[BUF_SIZE - 24];
+}query_msg_data_t;
 typedef enum rndis_usb_state {
 	RNDIS_USBH_OK = 0,
 	RNDIS_USBH_BUSY,
