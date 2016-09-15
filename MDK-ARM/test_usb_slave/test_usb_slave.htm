@@ -3,7 +3,7 @@
 <title>Static Call Graph - [test_usb_slave\test_usb_slave.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image test_usb_slave\test_usb_slave.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060300: Last Updated: Wed Sep 14 17:14:21 2016
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060300: Last Updated: Thu Sep 15 14:57:49 2016
 <BR><P>
 <H3>Maximum Stack Usage =        620 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -425,7 +425,7 @@ Global Symbols
 <LI><a href="#[159]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pbuf_copy
 <LI><a href="#[161]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;icmp_input
 <LI><a href="#[160]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;icmp_send_response
-<LI><a href="#[ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_RNDIS_Get_Specific_Oid
+<LI><a href="#[111]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_RNDIS_Get_Specific_Oid
 </UL>
 
 <P><STRONG><a name="[ae]"></a>__aeabi_memcpy4</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memcpya.o(.text))
@@ -434,7 +434,7 @@ Global Symbols
 
 <P><STRONG><a name="[1c6]"></a>__aeabi_memcpy8</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memcpya.o(.text), UNUSED)
 
-<P><STRONG><a name="[73]"></a>__aeabi_memset</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, memseta.o(.text), UNUSED)
+<P><STRONG><a name="[73]"></a>__aeabi_memset</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, memseta.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[74]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_memset$wrapper
 <LI><a href="#[72]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr
 </UL>
@@ -443,8 +443,12 @@ Global Symbols
 
 <P><STRONG><a name="[1c8]"></a>__aeabi_memset8</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memseta.o(.text), UNUSED)
 
-<P><STRONG><a name="[72]"></a>__aeabi_memclr</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, memseta.o(.text), UNUSED)
+<P><STRONG><a name="[72]"></a>__aeabi_memclr</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, memseta.o(.text))
 <BR><BR>[Calls]<UL><LI><a href="#[73]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memset
+</UL>
+<BR>[Called By]<UL><LI><a href="#[110]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_RNDIS_Query_Specific_Oid
+<LI><a href="#[111]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_RNDIS_Get_Specific_Oid
+<LI><a href="#[113]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_RNDIS_Get_SetResponse
 </UL>
 
 <P><STRONG><a name="[13f]"></a>__aeabi_memclr4</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memseta.o(.text))
@@ -493,7 +497,7 @@ Global Symbols
 </UL>
 <BR>[Called By]<UL><LI><a href="#[e2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SystemClock_Config
 <LI><a href="#[da]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_USART1_UART_Init
-<LI><a href="#[102]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_LL_Init
+<LI><a href="#[100]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_LL_Init
 </UL>
 
 <P><STRONG><a name="[81]"></a>HAL_Delay</STRONG> (Thumb, 26 bytes, Stack size 16 bytes, stm32f4xx_hal.o(i.HAL_Delay))
@@ -507,8 +511,8 @@ Global Symbols
 <LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Error_Handler
 <LI><a href="#[8a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_ETH_Init
 <LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ETH_MACDMAConfig
-<LI><a href="#[104]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_LL_DriverVBUS
-<LI><a href="#[f6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_Delay
+<LI><a href="#[102]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_LL_DriverVBUS
+<LI><a href="#[f4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_Delay
 </UL>
 
 <P><STRONG><a name="[17a]"></a>HAL_ETH_DMARxDescListInit</STRONG> (Thumb, 140 bytes, Stack size 16 bytes, stm32f4xx_hal_eth.o(i.HAL_ETH_DMARxDescListInit))
@@ -631,7 +635,7 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[98]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USB_GetCurrentFrame
 </UL>
-<BR>[Called By]<UL><LI><a href="#[102]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_LL_Init
+<BR>[Called By]<UL><LI><a href="#[100]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_LL_Init
 </UL>
 
 <P><STRONG><a name="[99]"></a>HAL_HCD_GetCurrentSpeed</STRONG> (Thumb, 12 bytes, Stack size 8 bytes, stm32f4xx_hal_hcd.o(i.HAL_HCD_GetCurrentSpeed))
@@ -639,14 +643,14 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[9a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USB_GetHostSpeed
 </UL>
-<BR>[Called By]<UL><LI><a href="#[106]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_LL_GetSpeed
+<BR>[Called By]<UL><LI><a href="#[104]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_LL_GetSpeed
 </UL>
 
-<P><STRONG><a name="[107]"></a>HAL_HCD_HC_GetURBState</STRONG> (Thumb, 20 bytes, Stack size 0 bytes, stm32f4xx_hal_hcd.o(i.HAL_HCD_HC_GetURBState))
+<P><STRONG><a name="[105]"></a>HAL_HCD_HC_GetURBState</STRONG> (Thumb, 20 bytes, Stack size 0 bytes, stm32f4xx_hal_hcd.o(i.HAL_HCD_HC_GetURBState))
 <BR><BR>[Called By]<UL><LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_LL_GetURBState
 </UL>
 
-<P><STRONG><a name="[105]"></a>HAL_HCD_HC_GetXferCount</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, stm32f4xx_hal_hcd.o(i.HAL_HCD_HC_GetXferCount))
+<P><STRONG><a name="[103]"></a>HAL_HCD_HC_GetXferCount</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, stm32f4xx_hal_hcd.o(i.HAL_HCD_HC_GetXferCount))
 <BR><BR>[Called By]<UL><LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_LL_GetLastXferSize
 </UL>
 
@@ -655,7 +659,7 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[9c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USB_HC_Halt
 </UL>
-<BR>[Called By]<UL><LI><a href="#[f1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_LL_ClosePipe
+<BR>[Called By]<UL><LI><a href="#[ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_LL_ClosePipe
 </UL>
 
 <P><STRONG><a name="[9d]"></a>HAL_HCD_HC_Init</STRONG> (Thumb, 186 bytes, Stack size 48 bytes, stm32f4xx_hal_hcd.o(i.HAL_HCD_HC_Init))
@@ -663,7 +667,7 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USB_HC_Init
 </UL>
-<BR>[Called By]<UL><LI><a href="#[10a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_LL_OpenPipe
+<BR>[Called By]<UL><LI><a href="#[108]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_LL_OpenPipe
 </UL>
 
 <P><STRONG><a name="[ce]"></a>HAL_HCD_HC_NotifyURBChange_Callback</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, usbh_conf.o(i.HAL_HCD_HC_NotifyURBChange_Callback))
@@ -706,7 +710,7 @@ Global Symbols
 <LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_HCD_MspInit
 <LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy4
 </UL>
-<BR>[Called By]<UL><LI><a href="#[102]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_LL_Init
+<BR>[Called By]<UL><LI><a href="#[100]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_LL_Init
 </UL>
 
 <P><STRONG><a name="[ac]"></a>HAL_HCD_MspInit</STRONG> (Thumb, 96 bytes, Stack size 32 bytes, usbh_conf.o(i.HAL_HCD_MspInit))
@@ -724,7 +728,7 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USB_ResetPort
 </UL>
-<BR>[Called By]<UL><LI><a href="#[10b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_LL_ResetPort
+<BR>[Called By]<UL><LI><a href="#[109]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_LL_ResetPort
 </UL>
 
 <P><STRONG><a name="[a6]"></a>HAL_HCD_SOF_Callback</STRONG> (Thumb, 14 bytes, Stack size 8 bytes, usbh_conf.o(i.HAL_HCD_SOF_Callback))
@@ -741,7 +745,7 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[b8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USB_EnableGlobalInt
 <LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USB_DriveVbus
 </UL>
-<BR>[Called By]<UL><LI><a href="#[103]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_LL_Start
+<BR>[Called By]<UL><LI><a href="#[101]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_LL_Start
 </UL>
 
 <P><STRONG><a name="[ba]"></a>HAL_HCD_Stop</STRONG> (Thumb, 46 bytes, Stack size 8 bytes, stm32f4xx_hal_hcd.o(i.HAL_HCD_Stop))
@@ -749,7 +753,7 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USB_StopHost
 </UL>
-<BR>[Called By]<UL><LI><a href="#[fe]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_LL_Stop
+<BR>[Called By]<UL><LI><a href="#[fc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_LL_Stop
 </UL>
 
 <P><STRONG><a name="[e1]"></a>HAL_IncTick</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, stm32f4xx_hal.o(i.HAL_IncTick))
@@ -1007,12 +1011,12 @@ Global Symbols
 <P><STRONG><a name="[e6]"></a>USBH_ClosePipe</STRONG> (Thumb, 18 bytes, Stack size 16 bytes, usbh_pipes.o(i.USBH_ClosePipe))
 <BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = USBH_ClosePipe &rArr; USBH_LL_ClosePipe &rArr; HAL_HCD_HC_Halt &rArr; USB_HC_Halt
 </UL>
-<BR>[Calls]<UL><LI><a href="#[f1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_LL_ClosePipe
+<BR>[Calls]<UL><LI><a href="#[ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_LL_ClosePipe
 </UL>
 <BR>[Called By]<UL><LI><a href="#[1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_CDC_InterfaceDeInit
 </UL>
 
-<P><STRONG><a name="[f0]"></a>USBH_ClrFeature</STRONG> (Thumb, 40 bytes, Stack size 16 bytes, usbh_ctlreq.o(i.USBH_ClrFeature))
+<P><STRONG><a name="[ee]"></a>USBH_ClrFeature</STRONG> (Thumb, 40 bytes, Stack size 16 bytes, usbh_ctlreq.o(i.USBH_ClrFeature))
 <BR><BR>[Stack]<UL><LI>Max Depth = 260<LI>Call Chain = USBH_ClrFeature &rArr; USBH_CtlReq &rArr; USBH_HandleControl &rArr; USBH_CtlSendData &rArr; USBH_LL_SubmitURB &rArr; HAL_HCD_HC_SubmitRequest &rArr; USB_HC_StartXfer &rArr; USB_WritePacket
 </UL>
 <BR>[Calls]<UL><LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_CtlReq
@@ -1020,51 +1024,51 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_CDC_Process
 </UL>
 
-<P><STRONG><a name="[f2]"></a>USBH_CtlReceiveData</STRONG> (Thumb, 42 bytes, Stack size 40 bytes, usbh_ioreq.o(i.USBH_CtlReceiveData))
+<P><STRONG><a name="[f0]"></a>USBH_CtlReceiveData</STRONG> (Thumb, 42 bytes, Stack size 40 bytes, usbh_ioreq.o(i.USBH_CtlReceiveData))
 <BR><BR>[Stack]<UL><LI>Max Depth = 196<LI>Call Chain = USBH_CtlReceiveData &rArr; USBH_LL_SubmitURB &rArr; HAL_HCD_HC_SubmitRequest &rArr; USB_HC_StartXfer &rArr; USB_WritePacket
 </UL>
 <BR>[Calls]<UL><LI><a href="#[e5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_LL_SubmitURB
 </UL>
-<BR>[Called By]<UL><LI><a href="#[f3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_HandleControl
+<BR>[Called By]<UL><LI><a href="#[f1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_HandleControl
 </UL>
 
 <P><STRONG><a name="[88]"></a>USBH_CtlReq</STRONG> (Thumb, 84 bytes, Stack size 24 bytes, usbh_ctlreq.o(i.USBH_CtlReq))
 <BR><BR>[Stack]<UL><LI>Max Depth = 244<LI>Call Chain = USBH_CtlReq &rArr; USBH_HandleControl &rArr; USBH_CtlSendData &rArr; USBH_LL_SubmitURB &rArr; HAL_HCD_HC_SubmitRequest &rArr; USB_HC_StartXfer &rArr; USB_WritePacket
 </UL>
-<BR>[Calls]<UL><LI><a href="#[f3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_HandleControl
+<BR>[Calls]<UL><LI><a href="#[f1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_HandleControl
 </UL>
 <BR>[Called By]<UL><LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GetLineCoding
-<LI><a href="#[f7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_GetDescriptor
-<LI><a href="#[f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_ClrFeature
-<LI><a href="#[10f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_SetCfg
-<LI><a href="#[100]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_SetAddress
+<LI><a href="#[f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_GetDescriptor
+<LI><a href="#[ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_ClrFeature
+<LI><a href="#[10d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_SetCfg
+<LI><a href="#[fe]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_SetAddress
 <LI><a href="#[116]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_RNDIS_Send_Encapsulated_Command
 <LI><a href="#[114]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_RNDIS_Get_Encapsulated_Response
 </UL>
 
-<P><STRONG><a name="[f4]"></a>USBH_CtlSendData</STRONG> (Thumb, 52 bytes, Stack size 40 bytes, usbh_ioreq.o(i.USBH_CtlSendData))
+<P><STRONG><a name="[f2]"></a>USBH_CtlSendData</STRONG> (Thumb, 52 bytes, Stack size 40 bytes, usbh_ioreq.o(i.USBH_CtlSendData))
 <BR><BR>[Stack]<UL><LI>Max Depth = 196<LI>Call Chain = USBH_CtlSendData &rArr; USBH_LL_SubmitURB &rArr; HAL_HCD_HC_SubmitRequest &rArr; USB_HC_StartXfer &rArr; USB_WritePacket
 </UL>
 <BR>[Calls]<UL><LI><a href="#[e5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_LL_SubmitURB
 </UL>
-<BR>[Called By]<UL><LI><a href="#[f3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_HandleControl
+<BR>[Called By]<UL><LI><a href="#[f1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_HandleControl
 </UL>
 
-<P><STRONG><a name="[f5]"></a>USBH_CtlSendSetup</STRONG> (Thumb, 38 bytes, Stack size 32 bytes, usbh_ioreq.o(i.USBH_CtlSendSetup))
+<P><STRONG><a name="[f3]"></a>USBH_CtlSendSetup</STRONG> (Thumb, 38 bytes, Stack size 32 bytes, usbh_ioreq.o(i.USBH_CtlSendSetup))
 <BR><BR>[Stack]<UL><LI>Max Depth = 188<LI>Call Chain = USBH_CtlSendSetup &rArr; USBH_LL_SubmitURB &rArr; HAL_HCD_HC_SubmitRequest &rArr; USB_HC_StartXfer &rArr; USB_WritePacket
 </UL>
 <BR>[Calls]<UL><LI><a href="#[e5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_LL_SubmitURB
 </UL>
-<BR>[Called By]<UL><LI><a href="#[f3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_HandleControl
+<BR>[Called By]<UL><LI><a href="#[f1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_HandleControl
 </UL>
 
-<P><STRONG><a name="[f6]"></a>USBH_Delay</STRONG> (Thumb, 12 bytes, Stack size 8 bytes, usbh_conf.o(i.USBH_Delay))
+<P><STRONG><a name="[f4]"></a>USBH_Delay</STRONG> (Thumb, 12 bytes, Stack size 8 bytes, usbh_conf.o(i.USBH_Delay))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = USBH_Delay &rArr; HAL_Delay
 </UL>
 <BR>[Calls]<UL><LI><a href="#[81]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Delay
 </UL>
 <BR>[Called By]<UL><LI><a href="#[e0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_Process
-<LI><a href="#[ff]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_HandleEnum
+<LI><a href="#[fd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_HandleEnum
 </UL>
 
 <P><STRONG><a name="[e9]"></a>USBH_FindInterface</STRONG> (Thumb, 80 bytes, Stack size 20 bytes, usbh_core.o(i.USBH_FindInterface))
@@ -1078,59 +1082,59 @@ Global Symbols
 <LI><a href="#[1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_CDC_InterfaceDeInit
 </UL>
 
-<P><STRONG><a name="[f7]"></a>USBH_GetDescriptor</STRONG> (Thumb, 74 bytes, Stack size 24 bytes, usbh_ctlreq.o(i.USBH_GetDescriptor))
+<P><STRONG><a name="[f5]"></a>USBH_GetDescriptor</STRONG> (Thumb, 74 bytes, Stack size 24 bytes, usbh_ctlreq.o(i.USBH_GetDescriptor))
 <BR><BR>[Stack]<UL><LI>Max Depth = 268<LI>Call Chain = USBH_GetDescriptor &rArr; USBH_CtlReq &rArr; USBH_HandleControl &rArr; USBH_CtlSendData &rArr; USBH_LL_SubmitURB &rArr; HAL_HCD_HC_SubmitRequest &rArr; USB_HC_StartXfer &rArr; USB_WritePacket
 </UL>
 <BR>[Calls]<UL><LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_CtlReq
 </UL>
-<BR>[Called By]<UL><LI><a href="#[fc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_Get_StringDesc
-<LI><a href="#[fa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_Get_DevDesc
-<LI><a href="#[f8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_Get_CfgDesc
+<BR>[Called By]<UL><LI><a href="#[fa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_Get_StringDesc
+<LI><a href="#[f8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_Get_DevDesc
+<LI><a href="#[f6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_Get_CfgDesc
 </UL>
 
-<P><STRONG><a name="[10c]"></a>USBH_GetNextDesc</STRONG> (Thumb, 18 bytes, Stack size 8 bytes, usbh_ctlreq.o(i.USBH_GetNextDesc))
+<P><STRONG><a name="[10a]"></a>USBH_GetNextDesc</STRONG> (Thumb, 18 bytes, Stack size 8 bytes, usbh_ctlreq.o(i.USBH_GetNextDesc))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = USBH_GetNextDesc
 </UL>
-<BR>[Called By]<UL><LI><a href="#[f9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_ParseCfgDesc
+<BR>[Called By]<UL><LI><a href="#[f7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_ParseCfgDesc
 </UL>
 
-<P><STRONG><a name="[f8]"></a>USBH_Get_CfgDesc</STRONG> (Thumb, 46 bytes, Stack size 24 bytes, usbh_ctlreq.o(i.USBH_Get_CfgDesc))
+<P><STRONG><a name="[f6]"></a>USBH_Get_CfgDesc</STRONG> (Thumb, 46 bytes, Stack size 24 bytes, usbh_ctlreq.o(i.USBH_Get_CfgDesc))
 <BR><BR>[Stack]<UL><LI>Max Depth = 292<LI>Call Chain = USBH_Get_CfgDesc &rArr; USBH_GetDescriptor &rArr; USBH_CtlReq &rArr; USBH_HandleControl &rArr; USBH_CtlSendData &rArr; USBH_LL_SubmitURB &rArr; HAL_HCD_HC_SubmitRequest &rArr; USB_HC_StartXfer &rArr; USB_WritePacket
 </UL>
-<BR>[Calls]<UL><LI><a href="#[f7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_GetDescriptor
-<LI><a href="#[f9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_ParseCfgDesc
+<BR>[Calls]<UL><LI><a href="#[f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_GetDescriptor
+<LI><a href="#[f7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_ParseCfgDesc
 </UL>
-<BR>[Called By]<UL><LI><a href="#[ff]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_HandleEnum
+<BR>[Called By]<UL><LI><a href="#[fd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_HandleEnum
 </UL>
 
-<P><STRONG><a name="[fa]"></a>USBH_Get_DevDesc</STRONG> (Thumb, 46 bytes, Stack size 24 bytes, usbh_ctlreq.o(i.USBH_Get_DevDesc))
+<P><STRONG><a name="[f8]"></a>USBH_Get_DevDesc</STRONG> (Thumb, 46 bytes, Stack size 24 bytes, usbh_ctlreq.o(i.USBH_Get_DevDesc))
 <BR><BR>[Stack]<UL><LI>Max Depth = 292<LI>Call Chain = USBH_Get_DevDesc &rArr; USBH_GetDescriptor &rArr; USBH_CtlReq &rArr; USBH_HandleControl &rArr; USBH_CtlSendData &rArr; USBH_LL_SubmitURB &rArr; HAL_HCD_HC_SubmitRequest &rArr; USB_HC_StartXfer &rArr; USB_WritePacket
 </UL>
-<BR>[Calls]<UL><LI><a href="#[f7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_GetDescriptor
-<LI><a href="#[fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_ParseDevDesc
+<BR>[Calls]<UL><LI><a href="#[f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_GetDescriptor
+<LI><a href="#[f9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_ParseDevDesc
 </UL>
-<BR>[Called By]<UL><LI><a href="#[ff]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_HandleEnum
+<BR>[Called By]<UL><LI><a href="#[fd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_HandleEnum
 </UL>
 
-<P><STRONG><a name="[fc]"></a>USBH_Get_StringDesc</STRONG> (Thumb, 54 bytes, Stack size 32 bytes, usbh_ctlreq.o(i.USBH_Get_StringDesc))
+<P><STRONG><a name="[fa]"></a>USBH_Get_StringDesc</STRONG> (Thumb, 54 bytes, Stack size 32 bytes, usbh_ctlreq.o(i.USBH_Get_StringDesc))
 <BR><BR>[Stack]<UL><LI>Max Depth = 300<LI>Call Chain = USBH_Get_StringDesc &rArr; USBH_GetDescriptor &rArr; USBH_CtlReq &rArr; USBH_HandleControl &rArr; USBH_CtlSendData &rArr; USBH_LL_SubmitURB &rArr; HAL_HCD_HC_SubmitRequest &rArr; USB_HC_StartXfer &rArr; USB_WritePacket
 </UL>
-<BR>[Calls]<UL><LI><a href="#[f7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_GetDescriptor
-<LI><a href="#[fd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_ParseStringDesc
+<BR>[Calls]<UL><LI><a href="#[f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_GetDescriptor
+<LI><a href="#[fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_ParseStringDesc
 </UL>
-<BR>[Called By]<UL><LI><a href="#[ff]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_HandleEnum
+<BR>[Called By]<UL><LI><a href="#[fd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_HandleEnum
 </UL>
 
 <P><STRONG><a name="[dc]"></a>USBH_Init</STRONG> (Thumb, 50 bytes, Stack size 16 bytes, usbh_core.o(i.USBH_Init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 160<LI>Call Chain = USBH_Init &rArr; USBH_LL_Init &rArr; HAL_HCD_Init &rArr; HAL_HCD_MspInit &rArr; HAL_NVIC_SetPriority &rArr; NVIC_SetPriority
 </UL>
-<BR>[Calls]<UL><LI><a href="#[102]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_LL_Init
-<LI><a href="#[101]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DeInitStateMachine
+<BR>[Calls]<UL><LI><a href="#[100]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_LL_Init
+<LI><a href="#[ff]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DeInitStateMachine
 </UL>
 <BR>[Called By]<UL><LI><a href="#[db]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_USB_HOST_Init
 </UL>
 
-<P><STRONG><a name="[f1]"></a>USBH_LL_ClosePipe</STRONG> (Thumb, 20 bytes, Stack size 16 bytes, usbh_conf.o(i.USBH_LL_ClosePipe))
+<P><STRONG><a name="[ef]"></a>USBH_LL_ClosePipe</STRONG> (Thumb, 20 bytes, Stack size 16 bytes, usbh_conf.o(i.USBH_LL_ClosePipe))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = USBH_LL_ClosePipe &rArr; HAL_HCD_HC_Halt &rArr; USB_HC_Halt
 </UL>
 <BR>[Calls]<UL><LI><a href="#[9b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_HCD_HC_Halt
@@ -1147,14 +1151,14 @@ Global Symbols
 <P><STRONG><a name="[96]"></a>USBH_LL_Disconnect</STRONG> (Thumb, 62 bytes, Stack size 8 bytes, usbh_core.o(i.USBH_LL_Disconnect))
 <BR><BR>[Stack]<UL><LI>Max Depth = 52<LI>Call Chain = USBH_LL_Disconnect &rArr; USBH_LL_Stop &rArr; HAL_HCD_Stop &rArr; USB_StopHost &rArr; USB_FlushTxFifo
 </UL>
-<BR>[Calls]<UL><LI><a href="#[fe]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_LL_Stop
-<LI><a href="#[103]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_LL_Start
+<BR>[Calls]<UL><LI><a href="#[fc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_LL_Stop
+<LI><a href="#[101]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_LL_Start
 <LI><a href="#[e7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_FreePipe
 </UL>
 <BR>[Called By]<UL><LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_HCD_Disconnect_Callback
 </UL>
 
-<P><STRONG><a name="[104]"></a>USBH_LL_DriverVBUS</STRONG> (Thumb, 24 bytes, Stack size 16 bytes, usbh_conf.o(i.USBH_LL_DriverVBUS))
+<P><STRONG><a name="[102]"></a>USBH_LL_DriverVBUS</STRONG> (Thumb, 24 bytes, Stack size 16 bytes, usbh_conf.o(i.USBH_LL_DriverVBUS))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = USBH_LL_DriverVBUS &rArr; HAL_Delay
 </UL>
 <BR>[Calls]<UL><LI><a href="#[81]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Delay
@@ -1165,12 +1169,12 @@ Global Symbols
 <P><STRONG><a name="[79]"></a>USBH_LL_GetLastXferSize</STRONG> (Thumb, 18 bytes, Stack size 16 bytes, usbh_conf.o(i.USBH_LL_GetLastXferSize))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = USBH_LL_GetLastXferSize
 </UL>
-<BR>[Calls]<UL><LI><a href="#[105]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_HCD_HC_GetXferCount
+<BR>[Calls]<UL><LI><a href="#[103]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_HCD_HC_GetXferCount
 </UL>
 <BR>[Called By]<UL><LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CDC_ProcessReception
 </UL>
 
-<P><STRONG><a name="[106]"></a>USBH_LL_GetSpeed</STRONG> (Thumb, 48 bytes, Stack size 16 bytes, usbh_conf.o(i.USBH_LL_GetSpeed))
+<P><STRONG><a name="[104]"></a>USBH_LL_GetSpeed</STRONG> (Thumb, 48 bytes, Stack size 16 bytes, usbh_conf.o(i.USBH_LL_GetSpeed))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = USBH_LL_GetSpeed &rArr; HAL_HCD_GetCurrentSpeed &rArr; USB_GetHostSpeed
 </UL>
 <BR>[Calls]<UL><LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_HCD_GetCurrentSpeed
@@ -1181,33 +1185,33 @@ Global Symbols
 <P><STRONG><a name="[78]"></a>USBH_LL_GetURBState</STRONG> (Thumb, 18 bytes, Stack size 16 bytes, usbh_conf.o(i.USBH_LL_GetURBState))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = USBH_LL_GetURBState
 </UL>
-<BR>[Calls]<UL><LI><a href="#[107]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_HCD_HC_GetURBState
+<BR>[Calls]<UL><LI><a href="#[105]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_HCD_HC_GetURBState
 </UL>
 <BR>[Called By]<UL><LI><a href="#[7b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CDC_ProcessTransmission
 <LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CDC_ProcessReception
-<LI><a href="#[f3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_HandleControl
+<LI><a href="#[f1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_HandleControl
 </UL>
 
 <P><STRONG><a name="[b6]"></a>USBH_LL_IncTimer</STRONG> (Thumb, 22 bytes, Stack size 8 bytes, usbh_core.o(i.USBH_LL_IncTimer))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = USBH_LL_IncTimer &rArr; USBH_HandleSof
 </UL>
-<BR>[Calls]<UL><LI><a href="#[108]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_HandleSof
+<BR>[Calls]<UL><LI><a href="#[106]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_HandleSof
 </UL>
 <BR>[Called By]<UL><LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_HCD_SOF_Callback
 </UL>
 
-<P><STRONG><a name="[102]"></a>USBH_LL_Init</STRONG> (Thumb, 88 bytes, Stack size 16 bytes, usbh_conf.o(i.USBH_LL_Init))
+<P><STRONG><a name="[100]"></a>USBH_LL_Init</STRONG> (Thumb, 88 bytes, Stack size 16 bytes, usbh_conf.o(i.USBH_LL_Init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 144<LI>Call Chain = USBH_LL_Init &rArr; HAL_HCD_Init &rArr; HAL_HCD_MspInit &rArr; HAL_NVIC_SetPriority &rArr; NVIC_SetPriority
 </UL>
 <BR>[Calls]<UL><LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_HCD_Init
 <LI><a href="#[97]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_HCD_GetCurrentFrame
 <LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Error_Handler
-<LI><a href="#[109]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_LL_SetTimer
+<LI><a href="#[107]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_LL_SetTimer
 </UL>
 <BR>[Called By]<UL><LI><a href="#[dc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_Init
 </UL>
 
-<P><STRONG><a name="[10a]"></a>USBH_LL_OpenPipe</STRONG> (Thumb, 44 bytes, Stack size 48 bytes, usbh_conf.o(i.USBH_LL_OpenPipe))
+<P><STRONG><a name="[108]"></a>USBH_LL_OpenPipe</STRONG> (Thumb, 44 bytes, Stack size 48 bytes, usbh_conf.o(i.USBH_LL_OpenPipe))
 <BR><BR>[Stack]<UL><LI>Max Depth = 120<LI>Call Chain = USBH_LL_OpenPipe &rArr; HAL_HCD_HC_Init &rArr; USB_HC_Init
 </UL>
 <BR>[Calls]<UL><LI><a href="#[9d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_HCD_HC_Init
@@ -1215,7 +1219,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[ec]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_OpenPipe
 </UL>
 
-<P><STRONG><a name="[10b]"></a>USBH_LL_ResetPort</STRONG> (Thumb, 16 bytes, Stack size 8 bytes, usbh_conf.o(i.USBH_LL_ResetPort))
+<P><STRONG><a name="[109]"></a>USBH_LL_ResetPort</STRONG> (Thumb, 16 bytes, Stack size 8 bytes, usbh_conf.o(i.USBH_LL_ResetPort))
 <BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = USBH_LL_ResetPort &rArr; HAL_HCD_ResetPort &rArr; USB_ResetPort &rArr; HAL_Delay
 </UL>
 <BR>[Calls]<UL><LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_HCD_ResetPort
@@ -1223,8 +1227,8 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[e0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_Process
 </UL>
 
-<P><STRONG><a name="[109]"></a>USBH_LL_SetTimer</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, usbh_core.o(i.USBH_LL_SetTimer))
-<BR><BR>[Called By]<UL><LI><a href="#[102]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_LL_Init
+<P><STRONG><a name="[107]"></a>USBH_LL_SetTimer</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, usbh_core.o(i.USBH_LL_SetTimer))
+<BR><BR>[Called By]<UL><LI><a href="#[100]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_LL_Init
 </UL>
 
 <P><STRONG><a name="[ed]"></a>USBH_LL_SetToggle</STRONG> (Thumb, 58 bytes, Stack size 12 bytes, usbh_conf.o(i.USBH_LL_SetToggle))
@@ -1233,7 +1237,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_CDC_InterfaceInit
 </UL>
 
-<P><STRONG><a name="[103]"></a>USBH_LL_Start</STRONG> (Thumb, 16 bytes, Stack size 8 bytes, usbh_conf.o(i.USBH_LL_Start))
+<P><STRONG><a name="[101]"></a>USBH_LL_Start</STRONG> (Thumb, 16 bytes, Stack size 8 bytes, usbh_conf.o(i.USBH_LL_Start))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = USBH_LL_Start &rArr; HAL_HCD_Start &rArr; USB_DriveVbus
 </UL>
 <BR>[Calls]<UL><LI><a href="#[b7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_HCD_Start
@@ -1242,13 +1246,13 @@ Global Symbols
 <LI><a href="#[de]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_Start
 </UL>
 
-<P><STRONG><a name="[fe]"></a>USBH_LL_Stop</STRONG> (Thumb, 16 bytes, Stack size 8 bytes, usbh_conf.o(i.USBH_LL_Stop))
+<P><STRONG><a name="[fc]"></a>USBH_LL_Stop</STRONG> (Thumb, 16 bytes, Stack size 8 bytes, usbh_conf.o(i.USBH_LL_Stop))
 <BR><BR>[Stack]<UL><LI>Max Depth = 44<LI>Call Chain = USBH_LL_Stop &rArr; HAL_HCD_Stop &rArr; USB_StopHost &rArr; USB_FlushTxFifo
 </UL>
 <BR>[Calls]<UL><LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_HCD_Stop
 </UL>
 <BR>[Called By]<UL><LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_LL_Disconnect
-<LI><a href="#[f3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_HandleControl
+<LI><a href="#[f1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_HandleControl
 </UL>
 
 <P><STRONG><a name="[e5]"></a>USBH_LL_SubmitURB</STRONG> (Thumb, 46 bytes, Stack size 56 bytes, usbh_conf.o(i.USBH_LL_SubmitURB))
@@ -1256,9 +1260,9 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_HCD_HC_SubmitRequest
 </UL>
-<BR>[Called By]<UL><LI><a href="#[f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_CtlSendSetup
-<LI><a href="#[f4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_CtlSendData
-<LI><a href="#[f2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_CtlReceiveData
+<BR>[Called By]<UL><LI><a href="#[f3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_CtlSendSetup
+<LI><a href="#[f2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_CtlSendData
+<LI><a href="#[f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_CtlReceiveData
 <LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_BulkSendData
 <LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_BulkReceiveData
 </UL>
@@ -1266,28 +1270,28 @@ Global Symbols
 <P><STRONG><a name="[ec]"></a>USBH_OpenPipe</STRONG> (Thumb, 42 bytes, Stack size 48 bytes, usbh_pipes.o(i.USBH_OpenPipe))
 <BR><BR>[Stack]<UL><LI>Max Depth = 168<LI>Call Chain = USBH_OpenPipe &rArr; USBH_LL_OpenPipe &rArr; HAL_HCD_HC_Init &rArr; USB_HC_Init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[10a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_LL_OpenPipe
+<BR>[Calls]<UL><LI><a href="#[108]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_LL_OpenPipe
 </UL>
 <BR>[Called By]<UL><LI><a href="#[e0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_Process
 <LI><a href="#[0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_CDC_InterfaceInit
-<LI><a href="#[ff]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_HandleEnum
+<LI><a href="#[fd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_HandleEnum
 </UL>
 
 <P><STRONG><a name="[e0]"></a>USBH_Process</STRONG> (Thumb, 996 bytes, Stack size 40 bytes, usbh_core.o(i.USBH_Process))
 <BR><BR>[Stack]<UL><LI>Max Depth = 364<LI>Call Chain = USBH_Process &rArr; USBH_HandleEnum &rArr; USBH_Get_StringDesc &rArr; USBH_GetDescriptor &rArr; USBH_CtlReq &rArr; USBH_HandleControl &rArr; USBH_CtlSendData &rArr; USBH_LL_SubmitURB &rArr; HAL_HCD_HC_SubmitRequest &rArr; USB_HC_StartXfer &rArr; USB_WritePacket
 </UL>
-<BR>[Calls]<UL><LI><a href="#[10b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_LL_ResetPort
-<LI><a href="#[106]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_LL_GetSpeed
-<LI><a href="#[f6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_Delay
-<LI><a href="#[10f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_SetCfg
+<BR>[Calls]<UL><LI><a href="#[109]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_LL_ResetPort
+<LI><a href="#[104]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_LL_GetSpeed
+<LI><a href="#[f4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_Delay
+<LI><a href="#[10d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_SetCfg
 <LI><a href="#[112]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_RNDIS_Set_Oid_Property
-<LI><a href="#[110]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_RNDIS_Send_Initialisation_Message
-<LI><a href="#[ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_RNDIS_Query_Specific_Oid
-<LI><a href="#[ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_RNDIS_Get_Specific_Oid
+<LI><a href="#[10e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_RNDIS_Send_Initialisation_Message
+<LI><a href="#[110]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_RNDIS_Query_Specific_Oid
+<LI><a href="#[111]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_RNDIS_Get_Specific_Oid
 <LI><a href="#[113]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_RNDIS_Get_SetResponse
-<LI><a href="#[111]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_RNDIS_Get_Initialisation_Complete
-<LI><a href="#[ff]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_HandleEnum
-<LI><a href="#[101]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DeInitStateMachine
+<LI><a href="#[10f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_RNDIS_Get_Initialisation_Complete
+<LI><a href="#[fd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_HandleEnum
+<LI><a href="#[ff]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DeInitStateMachine
 <LI><a href="#[ec]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_OpenPipe
 <LI><a href="#[e3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_AllocPipe
 </UL>
@@ -1299,12 +1303,12 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_CtlReq
 </UL>
-<BR>[Called By]<UL><LI><a href="#[ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_RNDIS_Get_Specific_Oid
+<BR>[Called By]<UL><LI><a href="#[111]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_RNDIS_Get_Specific_Oid
 <LI><a href="#[113]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_RNDIS_Get_SetResponse
-<LI><a href="#[111]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_RNDIS_Get_Initialisation_Complete
+<LI><a href="#[10f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_RNDIS_Get_Initialisation_Complete
 </UL>
 
-<P><STRONG><a name="[111]"></a>USBH_RNDIS_Get_Initialisation_Complete</STRONG> (Thumb, 90 bytes, Stack size 24 bytes, rndis.o(i.USBH_RNDIS_Get_Initialisation_Complete))
+<P><STRONG><a name="[10f]"></a>USBH_RNDIS_Get_Initialisation_Complete</STRONG> (Thumb, 88 bytes, Stack size 24 bytes, rndis.o(i.USBH_RNDIS_Get_Initialisation_Complete))
 <BR><BR>[Stack]<UL><LI>Max Depth = 284<LI>Call Chain = USBH_RNDIS_Get_Initialisation_Complete &rArr; USBH_RNDIS_Get_Encapsulated_Response &rArr; USBH_CtlReq &rArr; USBH_HandleControl &rArr; USBH_CtlSendData &rArr; USBH_LL_SubmitURB &rArr; HAL_HCD_HC_SubmitRequest &rArr; USB_HC_StartXfer &rArr; USB_WritePacket
 </UL>
 <BR>[Calls]<UL><LI><a href="#[114]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_RNDIS_Get_Encapsulated_Response
@@ -1312,31 +1316,32 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[e0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_Process
 </UL>
 
-<P><STRONG><a name="[113]"></a>USBH_RNDIS_Get_SetResponse</STRONG> (Thumb, 48 bytes, Stack size 16 bytes, rndis.o(i.USBH_RNDIS_Get_SetResponse))
+<P><STRONG><a name="[113]"></a>USBH_RNDIS_Get_SetResponse</STRONG> (Thumb, 54 bytes, Stack size 16 bytes, rndis.o(i.USBH_RNDIS_Get_SetResponse))
 <BR><BR>[Stack]<UL><LI>Max Depth = 276<LI>Call Chain = USBH_RNDIS_Get_SetResponse &rArr; USBH_RNDIS_Get_Encapsulated_Response &rArr; USBH_CtlReq &rArr; USBH_HandleControl &rArr; USBH_CtlSendData &rArr; USBH_LL_SubmitURB &rArr; HAL_HCD_HC_SubmitRequest &rArr; USB_HC_StartXfer &rArr; USB_WritePacket
 </UL>
-<BR>[Calls]<UL><LI><a href="#[114]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_RNDIS_Get_Encapsulated_Response
-</UL>
-<BR>[Called By]<UL><LI><a href="#[e0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_Process
-</UL>
-
-<P><STRONG><a name="[ef]"></a>USBH_RNDIS_Get_Specific_Oid</STRONG> (Thumb, 64 bytes, Stack size 24 bytes, rndis.o(i.USBH_RNDIS_Get_Specific_Oid))
-<BR><BR>[Stack]<UL><LI>Max Depth = 284<LI>Call Chain = USBH_RNDIS_Get_Specific_Oid &rArr; USBH_RNDIS_Get_Encapsulated_Response &rArr; USBH_CtlReq &rArr; USBH_HandleControl &rArr; USBH_CtlSendData &rArr; USBH_LL_SubmitURB &rArr; HAL_HCD_HC_SubmitRequest &rArr; USB_HC_StartXfer &rArr; USB_WritePacket
-</UL>
-<BR>[Calls]<UL><LI><a href="#[115]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
+<BR>[Calls]<UL><LI><a href="#[72]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr
 <LI><a href="#[114]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_RNDIS_Get_Encapsulated_Response
 </UL>
 <BR>[Called By]<UL><LI><a href="#[e0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_Process
-<LI><a href="#[3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_CDC_Process
 </UL>
 
-<P><STRONG><a name="[ee]"></a>USBH_RNDIS_Query_Specific_Oid</STRONG> (Thumb, 42 bytes, Stack size 16 bytes, rndis.o(i.USBH_RNDIS_Query_Specific_Oid))
-<BR><BR>[Stack]<UL><LI>Max Depth = 276<LI>Call Chain = USBH_RNDIS_Query_Specific_Oid &rArr; USBH_RNDIS_Send_Encapsulated_Command &rArr; USBH_CtlReq &rArr; USBH_HandleControl &rArr; USBH_CtlSendData &rArr; USBH_LL_SubmitURB &rArr; HAL_HCD_HC_SubmitRequest &rArr; USB_HC_StartXfer &rArr; USB_WritePacket
+<P><STRONG><a name="[111]"></a>USBH_RNDIS_Get_Specific_Oid</STRONG> (Thumb, 70 bytes, Stack size 24 bytes, rndis.o(i.USBH_RNDIS_Get_Specific_Oid))
+<BR><BR>[Stack]<UL><LI>Max Depth = 284<LI>Call Chain = USBH_RNDIS_Get_Specific_Oid &rArr; USBH_RNDIS_Get_Encapsulated_Response &rArr; USBH_CtlReq &rArr; USBH_HandleControl &rArr; USBH_CtlSendData &rArr; USBH_LL_SubmitURB &rArr; HAL_HCD_HC_SubmitRequest &rArr; USB_HC_StartXfer &rArr; USB_WritePacket
 </UL>
-<BR>[Calls]<UL><LI><a href="#[116]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_RNDIS_Send_Encapsulated_Command
+<BR>[Calls]<UL><LI><a href="#[72]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr
+<LI><a href="#[115]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
+<LI><a href="#[114]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_RNDIS_Get_Encapsulated_Response
 </UL>
 <BR>[Called By]<UL><LI><a href="#[e0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_Process
-<LI><a href="#[3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_CDC_Process
+</UL>
+
+<P><STRONG><a name="[110]"></a>USBH_RNDIS_Query_Specific_Oid</STRONG> (Thumb, 70 bytes, Stack size 24 bytes, rndis.o(i.USBH_RNDIS_Query_Specific_Oid))
+<BR><BR>[Stack]<UL><LI>Max Depth = 284<LI>Call Chain = USBH_RNDIS_Query_Specific_Oid &rArr; USBH_RNDIS_Send_Encapsulated_Command &rArr; USBH_CtlReq &rArr; USBH_HandleControl &rArr; USBH_CtlSendData &rArr; USBH_LL_SubmitURB &rArr; HAL_HCD_HC_SubmitRequest &rArr; USB_HC_StartXfer &rArr; USB_WritePacket
+</UL>
+<BR>[Calls]<UL><LI><a href="#[72]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr
+<LI><a href="#[116]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_RNDIS_Send_Encapsulated_Command
+</UL>
+<BR>[Called By]<UL><LI><a href="#[e0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_Process
 </UL>
 
 <P><STRONG><a name="[116]"></a>USBH_RNDIS_Send_Encapsulated_Command</STRONG> (Thumb, 34 bytes, Stack size 16 bytes, rndis.o(i.USBH_RNDIS_Send_Encapsulated_Command))
@@ -1345,11 +1350,11 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_CtlReq
 </UL>
 <BR>[Called By]<UL><LI><a href="#[112]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_RNDIS_Set_Oid_Property
-<LI><a href="#[110]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_RNDIS_Send_Initialisation_Message
-<LI><a href="#[ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_RNDIS_Query_Specific_Oid
+<LI><a href="#[10e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_RNDIS_Send_Initialisation_Message
+<LI><a href="#[110]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_RNDIS_Query_Specific_Oid
 </UL>
 
-<P><STRONG><a name="[110]"></a>USBH_RNDIS_Send_Initialisation_Message</STRONG> (Thumb, 46 bytes, Stack size 16 bytes, rndis.o(i.USBH_RNDIS_Send_Initialisation_Message))
+<P><STRONG><a name="[10e]"></a>USBH_RNDIS_Send_Initialisation_Message</STRONG> (Thumb, 46 bytes, Stack size 16 bytes, rndis.o(i.USBH_RNDIS_Send_Initialisation_Message))
 <BR><BR>[Stack]<UL><LI>Max Depth = 276<LI>Call Chain = USBH_RNDIS_Send_Initialisation_Message &rArr; USBH_RNDIS_Send_Encapsulated_Command &rArr; USBH_CtlReq &rArr; USBH_HandleControl &rArr; USBH_CtlSendData &rArr; USBH_LL_SubmitURB &rArr; HAL_HCD_HC_SubmitRequest &rArr; USB_HC_StartXfer &rArr; USB_WritePacket
 </UL>
 <BR>[Calls]<UL><LI><a href="#[116]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_RNDIS_Send_Encapsulated_Command
@@ -1357,7 +1362,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[e0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_Process
 </UL>
 
-<P><STRONG><a name="[112]"></a>USBH_RNDIS_Set_Oid_Property</STRONG> (Thumb, 56 bytes, Stack size 24 bytes, rndis.o(i.USBH_RNDIS_Set_Oid_Property))
+<P><STRONG><a name="[112]"></a>USBH_RNDIS_Set_Oid_Property</STRONG> (Thumb, 72 bytes, Stack size 24 bytes, rndis.o(i.USBH_RNDIS_Set_Oid_Property))
 <BR><BR>[Stack]<UL><LI>Max Depth = 284<LI>Call Chain = USBH_RNDIS_Set_Oid_Property &rArr; USBH_RNDIS_Send_Encapsulated_Command &rArr; USBH_CtlReq &rArr; USBH_HandleControl &rArr; USBH_CtlSendData &rArr; USBH_LL_SubmitURB &rArr; HAL_HCD_HC_SubmitRequest &rArr; USB_HC_StartXfer &rArr; USB_WritePacket
 </UL>
 <BR>[Calls]<UL><LI><a href="#[116]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_RNDIS_Send_Encapsulated_Command
@@ -1375,15 +1380,15 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_CDC_InterfaceInit
 </UL>
 
-<P><STRONG><a name="[100]"></a>USBH_SetAddress</STRONG> (Thumb, 40 bytes, Stack size 16 bytes, usbh_ctlreq.o(i.USBH_SetAddress))
+<P><STRONG><a name="[fe]"></a>USBH_SetAddress</STRONG> (Thumb, 40 bytes, Stack size 16 bytes, usbh_ctlreq.o(i.USBH_SetAddress))
 <BR><BR>[Stack]<UL><LI>Max Depth = 260<LI>Call Chain = USBH_SetAddress &rArr; USBH_CtlReq &rArr; USBH_HandleControl &rArr; USBH_CtlSendData &rArr; USBH_LL_SubmitURB &rArr; HAL_HCD_HC_SubmitRequest &rArr; USB_HC_StartXfer &rArr; USB_WritePacket
 </UL>
 <BR>[Calls]<UL><LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_CtlReq
 </UL>
-<BR>[Called By]<UL><LI><a href="#[ff]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_HandleEnum
+<BR>[Called By]<UL><LI><a href="#[fd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_HandleEnum
 </UL>
 
-<P><STRONG><a name="[10f]"></a>USBH_SetCfg</STRONG> (Thumb, 40 bytes, Stack size 16 bytes, usbh_ctlreq.o(i.USBH_SetCfg))
+<P><STRONG><a name="[10d]"></a>USBH_SetCfg</STRONG> (Thumb, 40 bytes, Stack size 16 bytes, usbh_ctlreq.o(i.USBH_SetCfg))
 <BR><BR>[Stack]<UL><LI>Max Depth = 260<LI>Call Chain = USBH_SetCfg &rArr; USBH_CtlReq &rArr; USBH_HandleControl &rArr; USBH_CtlSendData &rArr; USBH_LL_SubmitURB &rArr; HAL_HCD_HC_SubmitRequest &rArr; USB_HC_StartXfer &rArr; USB_WritePacket
 </UL>
 <BR>[Calls]<UL><LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_CtlReq
@@ -1394,8 +1399,8 @@ Global Symbols
 <P><STRONG><a name="[de]"></a>USBH_Start</STRONG> (Thumb, 22 bytes, Stack size 8 bytes, usbh_core.o(i.USBH_Start))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = USBH_Start &rArr; USBH_LL_DriverVBUS &rArr; HAL_Delay
 </UL>
-<BR>[Calls]<UL><LI><a href="#[103]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_LL_Start
-<LI><a href="#[104]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_LL_DriverVBUS
+<BR>[Calls]<UL><LI><a href="#[101]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_LL_Start
+<LI><a href="#[102]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_LL_DriverVBUS
 </UL>
 <BR>[Called By]<UL><LI><a href="#[db]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_USB_HOST_Init
 </UL>
@@ -3620,70 +3625,70 @@ Local Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[e3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_AllocPipe
 </UL>
 
-<P><STRONG><a name="[101]"></a>DeInitStateMachine</STRONG> (Thumb, 82 bytes, Stack size 0 bytes, usbh_core.o(i.DeInitStateMachine))
+<P><STRONG><a name="[ff]"></a>DeInitStateMachine</STRONG> (Thumb, 82 bytes, Stack size 0 bytes, usbh_core.o(i.DeInitStateMachine))
 <BR><BR>[Called By]<UL><LI><a href="#[e0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_Process
 <LI><a href="#[dc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_Init
 </UL>
 
-<P><STRONG><a name="[ff]"></a>USBH_HandleEnum</STRONG> (Thumb, 346 bytes, Stack size 24 bytes, usbh_core.o(i.USBH_HandleEnum))
+<P><STRONG><a name="[fd]"></a>USBH_HandleEnum</STRONG> (Thumb, 346 bytes, Stack size 24 bytes, usbh_core.o(i.USBH_HandleEnum))
 <BR><BR>[Stack]<UL><LI>Max Depth = 324<LI>Call Chain = USBH_HandleEnum &rArr; USBH_Get_StringDesc &rArr; USBH_GetDescriptor &rArr; USBH_CtlReq &rArr; USBH_HandleControl &rArr; USBH_CtlSendData &rArr; USBH_LL_SubmitURB &rArr; HAL_HCD_HC_SubmitRequest &rArr; USB_HC_StartXfer &rArr; USB_WritePacket
 </UL>
-<BR>[Calls]<UL><LI><a href="#[f6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_Delay
-<LI><a href="#[100]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_SetAddress
-<LI><a href="#[fc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_Get_StringDesc
-<LI><a href="#[fa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_Get_DevDesc
-<LI><a href="#[f8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_Get_CfgDesc
+<BR>[Calls]<UL><LI><a href="#[f4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_Delay
+<LI><a href="#[fe]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_SetAddress
+<LI><a href="#[fa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_Get_StringDesc
+<LI><a href="#[f8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_Get_DevDesc
+<LI><a href="#[f6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_Get_CfgDesc
 <LI><a href="#[ec]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_OpenPipe
 </UL>
 <BR>[Called By]<UL><LI><a href="#[e0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_Process
 </UL>
 
-<P><STRONG><a name="[108]"></a>USBH_HandleSof</STRONG> (Thumb, 28 bytes, Stack size 8 bytes, usbh_core.o(i.USBH_HandleSof))
+<P><STRONG><a name="[106]"></a>USBH_HandleSof</STRONG> (Thumb, 28 bytes, Stack size 8 bytes, usbh_core.o(i.USBH_HandleSof))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = USBH_HandleSof
 </UL>
 <BR>[Called By]<UL><LI><a href="#[b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_LL_IncTimer
 </UL>
 
-<P><STRONG><a name="[f3]"></a>USBH_HandleControl</STRONG> (Thumb, 446 bytes, Stack size 24 bytes, usbh_ctlreq.o(i.USBH_HandleControl))
+<P><STRONG><a name="[f1]"></a>USBH_HandleControl</STRONG> (Thumb, 446 bytes, Stack size 24 bytes, usbh_ctlreq.o(i.USBH_HandleControl))
 <BR><BR>[Stack]<UL><LI>Max Depth = 220<LI>Call Chain = USBH_HandleControl &rArr; USBH_CtlSendData &rArr; USBH_LL_SubmitURB &rArr; HAL_HCD_HC_SubmitRequest &rArr; USB_HC_StartXfer &rArr; USB_WritePacket
 </UL>
-<BR>[Calls]<UL><LI><a href="#[fe]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_LL_Stop
+<BR>[Calls]<UL><LI><a href="#[fc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_LL_Stop
 <LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_LL_GetURBState
-<LI><a href="#[f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_CtlSendSetup
-<LI><a href="#[f4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_CtlSendData
-<LI><a href="#[f2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_CtlReceiveData
+<LI><a href="#[f3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_CtlSendSetup
+<LI><a href="#[f2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_CtlSendData
+<LI><a href="#[f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_CtlReceiveData
 </UL>
 <BR>[Called By]<UL><LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_CtlReq
 </UL>
 
-<P><STRONG><a name="[f9]"></a>USBH_ParseCfgDesc</STRONG> (Thumb, 218 bytes, Stack size 40 bytes, usbh_ctlreq.o(i.USBH_ParseCfgDesc))
+<P><STRONG><a name="[f7]"></a>USBH_ParseCfgDesc</STRONG> (Thumb, 218 bytes, Stack size 40 bytes, usbh_ctlreq.o(i.USBH_ParseCfgDesc))
 <BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = USBH_ParseCfgDesc &rArr; USBH_GetNextDesc
 </UL>
-<BR>[Calls]<UL><LI><a href="#[10c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_GetNextDesc
-<LI><a href="#[10d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_ParseInterfaceDesc
-<LI><a href="#[10e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_ParseEPDesc
+<BR>[Calls]<UL><LI><a href="#[10a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_GetNextDesc
+<LI><a href="#[10b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_ParseInterfaceDesc
+<LI><a href="#[10c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_ParseEPDesc
 </UL>
-<BR>[Called By]<UL><LI><a href="#[f8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_Get_CfgDesc
+<BR>[Called By]<UL><LI><a href="#[f6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_Get_CfgDesc
 </UL>
 
-<P><STRONG><a name="[fb]"></a>USBH_ParseDevDesc</STRONG> (Thumb, 88 bytes, Stack size 8 bytes, usbh_ctlreq.o(i.USBH_ParseDevDesc))
+<P><STRONG><a name="[f9]"></a>USBH_ParseDevDesc</STRONG> (Thumb, 88 bytes, Stack size 8 bytes, usbh_ctlreq.o(i.USBH_ParseDevDesc))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = USBH_ParseDevDesc
 </UL>
-<BR>[Called By]<UL><LI><a href="#[fa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_Get_DevDesc
+<BR>[Called By]<UL><LI><a href="#[f8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_Get_DevDesc
 </UL>
 
-<P><STRONG><a name="[10e]"></a>USBH_ParseEPDesc</STRONG> (Thumb, 32 bytes, Stack size 0 bytes, usbh_ctlreq.o(i.USBH_ParseEPDesc))
-<BR><BR>[Called By]<UL><LI><a href="#[f9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_ParseCfgDesc
+<P><STRONG><a name="[10c]"></a>USBH_ParseEPDesc</STRONG> (Thumb, 32 bytes, Stack size 0 bytes, usbh_ctlreq.o(i.USBH_ParseEPDesc))
+<BR><BR>[Called By]<UL><LI><a href="#[f7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_ParseCfgDesc
 </UL>
 
-<P><STRONG><a name="[10d]"></a>USBH_ParseInterfaceDesc</STRONG> (Thumb, 38 bytes, Stack size 0 bytes, usbh_ctlreq.o(i.USBH_ParseInterfaceDesc))
-<BR><BR>[Called By]<UL><LI><a href="#[f9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_ParseCfgDesc
+<P><STRONG><a name="[10b]"></a>USBH_ParseInterfaceDesc</STRONG> (Thumb, 38 bytes, Stack size 0 bytes, usbh_ctlreq.o(i.USBH_ParseInterfaceDesc))
+<BR><BR>[Called By]<UL><LI><a href="#[f7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_ParseCfgDesc
 </UL>
 
-<P><STRONG><a name="[fd]"></a>USBH_ParseStringDesc</STRONG> (Thumb, 54 bytes, Stack size 12 bytes, usbh_ctlreq.o(i.USBH_ParseStringDesc))
+<P><STRONG><a name="[fb]"></a>USBH_ParseStringDesc</STRONG> (Thumb, 54 bytes, Stack size 12 bytes, usbh_ctlreq.o(i.USBH_ParseStringDesc))
 <BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = USBH_ParseStringDesc
 </UL>
-<BR>[Called By]<UL><LI><a href="#[fc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_Get_StringDesc
+<BR>[Called By]<UL><LI><a href="#[fa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_Get_StringDesc
 </UL>
 
 <P><STRONG><a name="[76]"></a>CDC_ProcessReception</STRONG> (Thumb, 126 bytes, Stack size 24 bytes, usbh_cdc.o(i.CDC_ProcessReception))
@@ -3743,14 +3748,12 @@ Local Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> usbh_cdc.o(.data)
 </UL>
-<P><STRONG><a name="[3]"></a>USBH_CDC_Process</STRONG> (Thumb, 176 bytes, Stack size 24 bytes, usbh_cdc.o(i.USBH_CDC_Process))
-<BR><BR>[Stack]<UL><LI>Max Depth = 308<LI>Call Chain = USBH_CDC_Process &rArr; USBH_RNDIS_Get_Specific_Oid &rArr; USBH_RNDIS_Get_Encapsulated_Response &rArr; USBH_CtlReq &rArr; USBH_HandleControl &rArr; USBH_CtlSendData &rArr; USBH_LL_SubmitURB &rArr; HAL_HCD_HC_SubmitRequest &rArr; USB_HC_StartXfer &rArr; USB_WritePacket
+<P><STRONG><a name="[3]"></a>USBH_CDC_Process</STRONG> (Thumb, 128 bytes, Stack size 24 bytes, usbh_cdc.o(i.USBH_CDC_Process))
+<BR><BR>[Stack]<UL><LI>Max Depth = 284<LI>Call Chain = USBH_CDC_Process &rArr; USBH_ClrFeature &rArr; USBH_CtlReq &rArr; USBH_HandleControl &rArr; USBH_CtlSendData &rArr; USBH_LL_SubmitURB &rArr; HAL_HCD_HC_SubmitRequest &rArr; USB_HC_StartXfer &rArr; USB_WritePacket
 </UL>
 <BR>[Calls]<UL><LI><a href="#[7b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CDC_ProcessTransmission
 <LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CDC_ProcessReception
-<LI><a href="#[f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_ClrFeature
-<LI><a href="#[ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_RNDIS_Query_Specific_Oid
-<LI><a href="#[ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_RNDIS_Get_Specific_Oid
+<LI><a href="#[ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBH_ClrFeature
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> usbh_cdc.o(.data)
 </UL>

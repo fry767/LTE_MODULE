@@ -106,7 +106,7 @@ uint8_t host_class_request_index = SEND_INIT_MSG;
 uint8_t usbh_busy_index = 0;
 uint32_t*	oid_supported_buf;
 uint8_t RNDIS_Data_buf[27*4];
-uint32_t data_to_set = 0;
+uint16_t data_to_set = 0;
 /**
   * @brief  HCD_Init 
   *         Initialize the HOST Core.
@@ -603,7 +603,7 @@ USBH_StatusTypeDef  USBH_Process(USBH_HandleTypeDef *phost)
 						return status;	
 					}		
 					
-					host_class_request_index +=3;
+					host_class_request_index ++;
 				break;
 				
 				case QUERY_OID_SUPPORTED : 
@@ -659,7 +659,7 @@ USBH_StatusTypeDef  USBH_Process(USBH_HandleTypeDef *phost)
 				break;
 				case RCV_CONNECT_STATUS:
 					status = USBH_RNDIS_Get_Specific_Oid(phost,OID_GEN_MEDIA_CONNECT_STATUS,device_connect_status);
-					if(status != USBH_OK)
+					if(status != USBH_OK )
 					{
 						return status;	
 					}		
@@ -690,9 +690,8 @@ USBH_StatusTypeDef  USBH_Process(USBH_HandleTypeDef *phost)
 					host_class_request_index ++;
 				break;
 				case RCV_PACKET_FILTER:
-
-					status = USBH_RNDIS_Get_Specific_Oid(phost,OID_GEN_MEDIA_CONNECT_STATUS,device_packet_filter);
 					
+					status = USBH_RNDIS_Get_Specific_Oid(phost,OID_GEN_CURRENT_PACKET_FILTER,device_packet_filter);
 					if(status != USBH_OK)
 					{
 						return status;	

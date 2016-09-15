@@ -341,16 +341,12 @@ static USBH_StatusTypeDef USBH_CDC_Process (USBH_HandleTypeDef *phost)
   switch(CDC_Handle->state)
   {
   case CDC_IDLE_STATE:
-		if(cdc_index == 0)
-		{
-			CDC_Handle->state = CDC_SET_LINE_CODING_STATE;
-			cdc_index ++;
-		}		
+		
     status = USBH_OK;
     break;
     
   case CDC_SET_LINE_CODING_STATE:
-		req_status = USBH_RNDIS_Query_Specific_Oid(phost,OID_GEN_CURRENT_PACKET_FILTER);
+		//req_status = USBH_RNDIS_Query_Specific_Oid(phost,OID_GEN_CURRENT_PACKET_FILTER);
     if(req_status == USBH_OK)
     {
       CDC_Handle->state = CDC_GET_LAST_LINE_CODING_STATE; 
@@ -364,9 +360,9 @@ static USBH_StatusTypeDef USBH_CDC_Process (USBH_HandleTypeDef *phost)
     
     
   case CDC_GET_LAST_LINE_CODING_STATE:
-   req_status = USBH_RNDIS_Get_Specific_Oid(phost,OID_GEN_CURRENT_PACKET_FILTER,&Current_Packet_Filter);
+  // req_status = USBH_RNDIS_Get_Specific_Oid(phost,OID_GEN_CURRENT_PACKET_FILTER,&Current_Packet_Filter);
     
-    if(req_status == USBH_OK && Current_Packet_Filter == PACKET_FILTER)
+    if(req_status == USBH_OK )
     {
       CDC_Handle->state = CDC_IDLE_STATE; 
     }

@@ -1129,12 +1129,9 @@ Section Cross References
     usbh_cdc.o(i.USBH_CDC_InterfaceInit) refers to usbh_pipes.o(i.USBH_AllocPipe) for USBH_AllocPipe
     usbh_cdc.o(i.USBH_CDC_InterfaceInit) refers to usbh_pipes.o(i.USBH_OpenPipe) for USBH_OpenPipe
     usbh_cdc.o(i.USBH_CDC_InterfaceInit) refers to usbh_conf.o(i.USBH_LL_SetToggle) for USBH_LL_SetToggle
-    usbh_cdc.o(i.USBH_CDC_Process) refers to rndis.o(i.USBH_RNDIS_Query_Specific_Oid) for USBH_RNDIS_Query_Specific_Oid
-    usbh_cdc.o(i.USBH_CDC_Process) refers to rndis.o(i.USBH_RNDIS_Get_Specific_Oid) for USBH_RNDIS_Get_Specific_Oid
     usbh_cdc.o(i.USBH_CDC_Process) refers to usbh_cdc.o(i.CDC_ProcessTransmission) for CDC_ProcessTransmission
     usbh_cdc.o(i.USBH_CDC_Process) refers to usbh_cdc.o(i.CDC_ProcessReception) for CDC_ProcessReception
     usbh_cdc.o(i.USBH_CDC_Process) refers to usbh_ctlreq.o(i.USBH_ClrFeature) for USBH_ClrFeature
-    usbh_cdc.o(i.USBH_CDC_Process) refers to usbh_cdc.o(.data) for cdc_index
     usbh_cdc.o(i.USBH_CDC_Stop) refers to usbh_pipes.o(i.USBH_ClosePipe) for USBH_ClosePipe
     usbh_cdc.o(.data) refers to usbh_cdc.o(.conststring) for .conststring
     usbh_cdc.o(.data) refers to usbh_cdc.o(i.USBH_CDC_InterfaceInit) for USBH_CDC_InterfaceInit
@@ -1144,25 +1141,28 @@ Section Cross References
     usbh_cdc.o(.data) refers to usbh_cdc.o(i.USBH_CDC_SOFProcess) for USBH_CDC_SOFProcess
     rndis.o(i.USBH_RNDIS_Get_Encapsulated_Response) refers to usbh_ctlreq.o(i.USBH_CtlReq) for USBH_CtlReq
     rndis.o(i.USBH_RNDIS_Get_Initialisation_Complete) refers to rndis.o(i.USBH_RNDIS_Get_Encapsulated_Response) for USBH_RNDIS_Get_Encapsulated_Response
-    rndis.o(i.USBH_RNDIS_Get_Initialisation_Complete) refers to rndis.o(.bss) for encap_buf
+    rndis.o(i.USBH_RNDIS_Get_Initialisation_Complete) refers to rndis.o(.bss) for encap_buf_rx
     rndis.o(i.USBH_RNDIS_Get_Oid_Supported_List) refers to rndis.o(i.USBH_RNDIS_Get_Encapsulated_Response) for USBH_RNDIS_Get_Encapsulated_Response
     rndis.o(i.USBH_RNDIS_Get_Oid_Supported_List) refers to memcpya.o(.text) for __aeabi_memcpy
+    rndis.o(i.USBH_RNDIS_Get_SetResponse) refers to memseta.o(.text) for __aeabi_memclr
     rndis.o(i.USBH_RNDIS_Get_SetResponse) refers to rndis.o(i.USBH_RNDIS_Get_Encapsulated_Response) for USBH_RNDIS_Get_Encapsulated_Response
-    rndis.o(i.USBH_RNDIS_Get_SetResponse) refers to rndis.o(.bss) for encap_buf
+    rndis.o(i.USBH_RNDIS_Get_SetResponse) refers to rndis.o(.bss) for encap_buf_rx
+    rndis.o(i.USBH_RNDIS_Get_Specific_Oid) refers to memseta.o(.text) for __aeabi_memclr
     rndis.o(i.USBH_RNDIS_Get_Specific_Oid) refers to rndis.o(i.USBH_RNDIS_Get_Encapsulated_Response) for USBH_RNDIS_Get_Encapsulated_Response
     rndis.o(i.USBH_RNDIS_Get_Specific_Oid) refers to memcpya.o(.text) for __aeabi_memcpy
-    rndis.o(i.USBH_RNDIS_Get_Specific_Oid) refers to rndis.o(.bss) for encap_buf
+    rndis.o(i.USBH_RNDIS_Get_Specific_Oid) refers to rndis.o(.bss) for encap_buf_rx
     rndis.o(i.USBH_RNDIS_Query_Oid_Supported_List) refers to rndis.o(i.USBH_RNDIS_Send_Encapsulated_Command) for USBH_RNDIS_Send_Encapsulated_Command
-    rndis.o(i.USBH_RNDIS_Query_Oid_Supported_List) refers to rndis.o(.bss) for encap_buf
+    rndis.o(i.USBH_RNDIS_Query_Oid_Supported_List) refers to rndis.o(.bss) for encap_buf_tx
+    rndis.o(i.USBH_RNDIS_Query_Specific_Oid) refers to memseta.o(.text) for __aeabi_memclr
     rndis.o(i.USBH_RNDIS_Query_Specific_Oid) refers to rndis.o(i.USBH_RNDIS_Send_Encapsulated_Command) for USBH_RNDIS_Send_Encapsulated_Command
-    rndis.o(i.USBH_RNDIS_Query_Specific_Oid) refers to rndis.o(.bss) for encap_buf
+    rndis.o(i.USBH_RNDIS_Query_Specific_Oid) refers to rndis.o(.bss) for encap_buf_tx
     rndis.o(i.USBH_RNDIS_Send_Bulk) refers to memseta.o(.text) for __aeabi_memclr4
     rndis.o(i.USBH_RNDIS_Send_Bulk) refers to usbh_cdc.o(i.USBH_CDC_Transmit) for USBH_CDC_Transmit
     rndis.o(i.USBH_RNDIS_Send_Encapsulated_Command) refers to usbh_ctlreq.o(i.USBH_CtlReq) for USBH_CtlReq
     rndis.o(i.USBH_RNDIS_Send_Initialisation_Message) refers to rndis.o(i.USBH_RNDIS_Send_Encapsulated_Command) for USBH_RNDIS_Send_Encapsulated_Command
-    rndis.o(i.USBH_RNDIS_Send_Initialisation_Message) refers to rndis.o(.bss) for encap_buf
+    rndis.o(i.USBH_RNDIS_Send_Initialisation_Message) refers to rndis.o(.bss) for encap_buf_tx
     rndis.o(i.USBH_RNDIS_Set_Oid_Property) refers to rndis.o(i.USBH_RNDIS_Send_Encapsulated_Command) for USBH_RNDIS_Send_Encapsulated_Command
-    rndis.o(i.USBH_RNDIS_Set_Oid_Property) refers to rndis.o(.bss) for encap_buf
+    rndis.o(i.USBH_RNDIS_Set_Oid_Property) refers to rndis.o(.bss) for encap_buf_tx
     entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry10a.o(.ARM.Collect$$$$0000000D) for __rt_final_cpp
     entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry11a.o(.ARM.Collect$$$$0000000F) for __rt_final_exit
     entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry7b.o(.ARM.Collect$$$$00000008) for _main_clock
@@ -1831,11 +1831,12 @@ Removing Unused input sections from the image.
     Removing rndis.o(.rev16_text), (4 bytes).
     Removing rndis.o(.revsh_text), (4 bytes).
     Removing rndis.o(.rrx_text), (6 bytes).
-    Removing rndis.o(i.USBH_RNDIS_Get_Oid_Supported_List), (62 bytes).
+    Removing rndis.o(i.USBH_RNDIS_Get_Oid_Supported_List), (60 bytes).
     Removing rndis.o(i.USBH_RNDIS_Query_Oid_Supported_List), (52 bytes).
     Removing rndis.o(i.USBH_RNDIS_Send_Bulk), (42 bytes).
+    Removing rndis.o(.data), (1 bytes).
 
-617 unused section(s) (total 28152 bytes) removed from the image.
+618 unused section(s) (total 28151 bytes) removed from the image.
 
 ==============================================================================
 
@@ -2218,71 +2219,71 @@ Image Symbol Table
     USBH_CDC_InterfaceDeInit                 0x08003631   Thumb Code   112  usbh_cdc.o(i.USBH_CDC_InterfaceDeInit)
     i.USBH_CDC_InterfaceInit                 0x080036a0   Section        0  usbh_cdc.o(i.USBH_CDC_InterfaceInit)
     USBH_CDC_InterfaceInit                   0x080036a1   Thumb Code   502  usbh_cdc.o(i.USBH_CDC_InterfaceInit)
-    i.USBH_CDC_Process                       0x08003898   Section        0  usbh_cdc.o(i.USBH_CDC_Process)
-    USBH_CDC_Process                         0x08003899   Thumb Code   176  usbh_cdc.o(i.USBH_CDC_Process)
-    i.USBH_CDC_ReceiveCallback               0x08003950   Section        0  usbh_cdc.o(i.USBH_CDC_ReceiveCallback)
-    i.USBH_CDC_SOFProcess                    0x08003952   Section        0  usbh_cdc.o(i.USBH_CDC_SOFProcess)
-    USBH_CDC_SOFProcess                      0x08003953   Thumb Code     6  usbh_cdc.o(i.USBH_CDC_SOFProcess)
-    i.USBH_CDC_TransmitCallback              0x08003958   Section        0  usbh_cdc.o(i.USBH_CDC_TransmitCallback)
-    i.USBH_ClosePipe                         0x0800395a   Section        0  usbh_pipes.o(i.USBH_ClosePipe)
-    i.USBH_ClrFeature                        0x0800396c   Section        0  usbh_ctlreq.o(i.USBH_ClrFeature)
-    i.USBH_CtlReceiveData                    0x08003994   Section        0  usbh_ioreq.o(i.USBH_CtlReceiveData)
-    i.USBH_CtlReq                            0x080039be   Section        0  usbh_ctlreq.o(i.USBH_CtlReq)
-    i.USBH_CtlSendData                       0x08003a12   Section        0  usbh_ioreq.o(i.USBH_CtlSendData)
-    i.USBH_CtlSendSetup                      0x08003a46   Section        0  usbh_ioreq.o(i.USBH_CtlSendSetup)
-    i.USBH_Delay                             0x08003a6c   Section        0  usbh_conf.o(i.USBH_Delay)
-    i.USBH_FindInterface                     0x08003a78   Section        0  usbh_core.o(i.USBH_FindInterface)
-    i.USBH_FreePipe                          0x08003ac8   Section        0  usbh_pipes.o(i.USBH_FreePipe)
-    i.USBH_GetDescriptor                     0x08003ae6   Section        0  usbh_ctlreq.o(i.USBH_GetDescriptor)
-    i.USBH_GetFreePipe                       0x08003b30   Section        0  usbh_pipes.o(i.USBH_GetFreePipe)
-    USBH_GetFreePipe                         0x08003b31   Thumb Code    40  usbh_pipes.o(i.USBH_GetFreePipe)
-    i.USBH_GetNextDesc                       0x08003b58   Section        0  usbh_ctlreq.o(i.USBH_GetNextDesc)
-    i.USBH_Get_CfgDesc                       0x08003b6a   Section        0  usbh_ctlreq.o(i.USBH_Get_CfgDesc)
-    i.USBH_Get_DevDesc                       0x08003b98   Section        0  usbh_ctlreq.o(i.USBH_Get_DevDesc)
-    i.USBH_Get_StringDesc                    0x08003bc6   Section        0  usbh_ctlreq.o(i.USBH_Get_StringDesc)
-    i.USBH_HandleControl                     0x08003bfc   Section        0  usbh_ctlreq.o(i.USBH_HandleControl)
-    USBH_HandleControl                       0x08003bfd   Thumb Code   446  usbh_ctlreq.o(i.USBH_HandleControl)
-    i.USBH_HandleEnum                        0x08003dba   Section        0  usbh_core.o(i.USBH_HandleEnum)
-    USBH_HandleEnum                          0x08003dbb   Thumb Code   346  usbh_core.o(i.USBH_HandleEnum)
-    i.USBH_HandleSof                         0x08003f14   Section        0  usbh_core.o(i.USBH_HandleSof)
-    USBH_HandleSof                           0x08003f15   Thumb Code    28  usbh_core.o(i.USBH_HandleSof)
-    i.USBH_Init                              0x08003f30   Section        0  usbh_core.o(i.USBH_Init)
-    i.USBH_LL_ClosePipe                      0x08003f62   Section        0  usbh_conf.o(i.USBH_LL_ClosePipe)
-    i.USBH_LL_Connect                        0x08003f76   Section        0  usbh_core.o(i.USBH_LL_Connect)
-    i.USBH_LL_Disconnect                     0x08003fa4   Section        0  usbh_core.o(i.USBH_LL_Disconnect)
-    i.USBH_LL_DriverVBUS                     0x08003fe2   Section        0  usbh_conf.o(i.USBH_LL_DriverVBUS)
-    i.USBH_LL_GetLastXferSize                0x08003ffa   Section        0  usbh_conf.o(i.USBH_LL_GetLastXferSize)
-    i.USBH_LL_GetSpeed                       0x0800400c   Section        0  usbh_conf.o(i.USBH_LL_GetSpeed)
-    i.USBH_LL_GetURBState                    0x0800403c   Section        0  usbh_conf.o(i.USBH_LL_GetURBState)
-    i.USBH_LL_IncTimer                       0x0800404e   Section        0  usbh_core.o(i.USBH_LL_IncTimer)
-    i.USBH_LL_Init                           0x08004064   Section        0  usbh_conf.o(i.USBH_LL_Init)
-    i.USBH_LL_OpenPipe                       0x080040c4   Section        0  usbh_conf.o(i.USBH_LL_OpenPipe)
-    i.USBH_LL_ResetPort                      0x080040f0   Section        0  usbh_conf.o(i.USBH_LL_ResetPort)
-    i.USBH_LL_SetTimer                       0x08004100   Section        0  usbh_core.o(i.USBH_LL_SetTimer)
-    i.USBH_LL_SetToggle                      0x08004106   Section        0  usbh_conf.o(i.USBH_LL_SetToggle)
-    i.USBH_LL_Start                          0x08004140   Section        0  usbh_conf.o(i.USBH_LL_Start)
-    i.USBH_LL_Stop                           0x08004150   Section        0  usbh_conf.o(i.USBH_LL_Stop)
-    i.USBH_LL_SubmitURB                      0x08004160   Section        0  usbh_conf.o(i.USBH_LL_SubmitURB)
-    i.USBH_OpenPipe                          0x0800418e   Section        0  usbh_pipes.o(i.USBH_OpenPipe)
-    i.USBH_ParseCfgDesc                      0x080041b8   Section        0  usbh_ctlreq.o(i.USBH_ParseCfgDesc)
-    USBH_ParseCfgDesc                        0x080041b9   Thumb Code   218  usbh_ctlreq.o(i.USBH_ParseCfgDesc)
-    i.USBH_ParseDevDesc                      0x08004292   Section        0  usbh_ctlreq.o(i.USBH_ParseDevDesc)
-    USBH_ParseDevDesc                        0x08004293   Thumb Code    88  usbh_ctlreq.o(i.USBH_ParseDevDesc)
-    i.USBH_ParseEPDesc                       0x080042ea   Section        0  usbh_ctlreq.o(i.USBH_ParseEPDesc)
-    USBH_ParseEPDesc                         0x080042eb   Thumb Code    32  usbh_ctlreq.o(i.USBH_ParseEPDesc)
-    i.USBH_ParseInterfaceDesc                0x0800430a   Section        0  usbh_ctlreq.o(i.USBH_ParseInterfaceDesc)
-    USBH_ParseInterfaceDesc                  0x0800430b   Thumb Code    38  usbh_ctlreq.o(i.USBH_ParseInterfaceDesc)
-    i.USBH_ParseStringDesc                   0x08004330   Section        0  usbh_ctlreq.o(i.USBH_ParseStringDesc)
-    USBH_ParseStringDesc                     0x08004331   Thumb Code    54  usbh_ctlreq.o(i.USBH_ParseStringDesc)
-    i.USBH_Process                           0x08004368   Section        0  usbh_core.o(i.USBH_Process)
-    i.USBH_RNDIS_Get_Encapsulated_Response   0x08004760   Section        0  rndis.o(i.USBH_RNDIS_Get_Encapsulated_Response)
-    i.USBH_RNDIS_Get_Initialisation_Complete 0x08004784   Section        0  rndis.o(i.USBH_RNDIS_Get_Initialisation_Complete)
-    i.USBH_RNDIS_Get_SetResponse             0x080047e4   Section        0  rndis.o(i.USBH_RNDIS_Get_SetResponse)
-    i.USBH_RNDIS_Get_Specific_Oid            0x08004818   Section        0  rndis.o(i.USBH_RNDIS_Get_Specific_Oid)
-    i.USBH_RNDIS_Query_Specific_Oid          0x0800485c   Section        0  rndis.o(i.USBH_RNDIS_Query_Specific_Oid)
-    i.USBH_RNDIS_Send_Encapsulated_Command   0x0800488c   Section        0  rndis.o(i.USBH_RNDIS_Send_Encapsulated_Command)
-    i.USBH_RNDIS_Send_Initialisation_Message 0x080048b0   Section        0  rndis.o(i.USBH_RNDIS_Send_Initialisation_Message)
-    i.USBH_RNDIS_Set_Oid_Property            0x080048e4   Section        0  rndis.o(i.USBH_RNDIS_Set_Oid_Property)
+    i.USBH_CDC_Process                       0x08003896   Section        0  usbh_cdc.o(i.USBH_CDC_Process)
+    USBH_CDC_Process                         0x08003897   Thumb Code   128  usbh_cdc.o(i.USBH_CDC_Process)
+    i.USBH_CDC_ReceiveCallback               0x08003916   Section        0  usbh_cdc.o(i.USBH_CDC_ReceiveCallback)
+    i.USBH_CDC_SOFProcess                    0x08003918   Section        0  usbh_cdc.o(i.USBH_CDC_SOFProcess)
+    USBH_CDC_SOFProcess                      0x08003919   Thumb Code     6  usbh_cdc.o(i.USBH_CDC_SOFProcess)
+    i.USBH_CDC_TransmitCallback              0x0800391e   Section        0  usbh_cdc.o(i.USBH_CDC_TransmitCallback)
+    i.USBH_ClosePipe                         0x08003920   Section        0  usbh_pipes.o(i.USBH_ClosePipe)
+    i.USBH_ClrFeature                        0x08003932   Section        0  usbh_ctlreq.o(i.USBH_ClrFeature)
+    i.USBH_CtlReceiveData                    0x0800395a   Section        0  usbh_ioreq.o(i.USBH_CtlReceiveData)
+    i.USBH_CtlReq                            0x08003984   Section        0  usbh_ctlreq.o(i.USBH_CtlReq)
+    i.USBH_CtlSendData                       0x080039d8   Section        0  usbh_ioreq.o(i.USBH_CtlSendData)
+    i.USBH_CtlSendSetup                      0x08003a0c   Section        0  usbh_ioreq.o(i.USBH_CtlSendSetup)
+    i.USBH_Delay                             0x08003a32   Section        0  usbh_conf.o(i.USBH_Delay)
+    i.USBH_FindInterface                     0x08003a3e   Section        0  usbh_core.o(i.USBH_FindInterface)
+    i.USBH_FreePipe                          0x08003a8e   Section        0  usbh_pipes.o(i.USBH_FreePipe)
+    i.USBH_GetDescriptor                     0x08003aac   Section        0  usbh_ctlreq.o(i.USBH_GetDescriptor)
+    i.USBH_GetFreePipe                       0x08003af6   Section        0  usbh_pipes.o(i.USBH_GetFreePipe)
+    USBH_GetFreePipe                         0x08003af7   Thumb Code    40  usbh_pipes.o(i.USBH_GetFreePipe)
+    i.USBH_GetNextDesc                       0x08003b1e   Section        0  usbh_ctlreq.o(i.USBH_GetNextDesc)
+    i.USBH_Get_CfgDesc                       0x08003b30   Section        0  usbh_ctlreq.o(i.USBH_Get_CfgDesc)
+    i.USBH_Get_DevDesc                       0x08003b5e   Section        0  usbh_ctlreq.o(i.USBH_Get_DevDesc)
+    i.USBH_Get_StringDesc                    0x08003b8c   Section        0  usbh_ctlreq.o(i.USBH_Get_StringDesc)
+    i.USBH_HandleControl                     0x08003bc2   Section        0  usbh_ctlreq.o(i.USBH_HandleControl)
+    USBH_HandleControl                       0x08003bc3   Thumb Code   446  usbh_ctlreq.o(i.USBH_HandleControl)
+    i.USBH_HandleEnum                        0x08003d80   Section        0  usbh_core.o(i.USBH_HandleEnum)
+    USBH_HandleEnum                          0x08003d81   Thumb Code   346  usbh_core.o(i.USBH_HandleEnum)
+    i.USBH_HandleSof                         0x08003eda   Section        0  usbh_core.o(i.USBH_HandleSof)
+    USBH_HandleSof                           0x08003edb   Thumb Code    28  usbh_core.o(i.USBH_HandleSof)
+    i.USBH_Init                              0x08003ef6   Section        0  usbh_core.o(i.USBH_Init)
+    i.USBH_LL_ClosePipe                      0x08003f28   Section        0  usbh_conf.o(i.USBH_LL_ClosePipe)
+    i.USBH_LL_Connect                        0x08003f3c   Section        0  usbh_core.o(i.USBH_LL_Connect)
+    i.USBH_LL_Disconnect                     0x08003f6a   Section        0  usbh_core.o(i.USBH_LL_Disconnect)
+    i.USBH_LL_DriverVBUS                     0x08003fa8   Section        0  usbh_conf.o(i.USBH_LL_DriverVBUS)
+    i.USBH_LL_GetLastXferSize                0x08003fc0   Section        0  usbh_conf.o(i.USBH_LL_GetLastXferSize)
+    i.USBH_LL_GetSpeed                       0x08003fd2   Section        0  usbh_conf.o(i.USBH_LL_GetSpeed)
+    i.USBH_LL_GetURBState                    0x08004002   Section        0  usbh_conf.o(i.USBH_LL_GetURBState)
+    i.USBH_LL_IncTimer                       0x08004014   Section        0  usbh_core.o(i.USBH_LL_IncTimer)
+    i.USBH_LL_Init                           0x0800402c   Section        0  usbh_conf.o(i.USBH_LL_Init)
+    i.USBH_LL_OpenPipe                       0x0800408c   Section        0  usbh_conf.o(i.USBH_LL_OpenPipe)
+    i.USBH_LL_ResetPort                      0x080040b8   Section        0  usbh_conf.o(i.USBH_LL_ResetPort)
+    i.USBH_LL_SetTimer                       0x080040c8   Section        0  usbh_core.o(i.USBH_LL_SetTimer)
+    i.USBH_LL_SetToggle                      0x080040ce   Section        0  usbh_conf.o(i.USBH_LL_SetToggle)
+    i.USBH_LL_Start                          0x08004108   Section        0  usbh_conf.o(i.USBH_LL_Start)
+    i.USBH_LL_Stop                           0x08004118   Section        0  usbh_conf.o(i.USBH_LL_Stop)
+    i.USBH_LL_SubmitURB                      0x08004128   Section        0  usbh_conf.o(i.USBH_LL_SubmitURB)
+    i.USBH_OpenPipe                          0x08004156   Section        0  usbh_pipes.o(i.USBH_OpenPipe)
+    i.USBH_ParseCfgDesc                      0x08004180   Section        0  usbh_ctlreq.o(i.USBH_ParseCfgDesc)
+    USBH_ParseCfgDesc                        0x08004181   Thumb Code   218  usbh_ctlreq.o(i.USBH_ParseCfgDesc)
+    i.USBH_ParseDevDesc                      0x0800425a   Section        0  usbh_ctlreq.o(i.USBH_ParseDevDesc)
+    USBH_ParseDevDesc                        0x0800425b   Thumb Code    88  usbh_ctlreq.o(i.USBH_ParseDevDesc)
+    i.USBH_ParseEPDesc                       0x080042b2   Section        0  usbh_ctlreq.o(i.USBH_ParseEPDesc)
+    USBH_ParseEPDesc                         0x080042b3   Thumb Code    32  usbh_ctlreq.o(i.USBH_ParseEPDesc)
+    i.USBH_ParseInterfaceDesc                0x080042d2   Section        0  usbh_ctlreq.o(i.USBH_ParseInterfaceDesc)
+    USBH_ParseInterfaceDesc                  0x080042d3   Thumb Code    38  usbh_ctlreq.o(i.USBH_ParseInterfaceDesc)
+    i.USBH_ParseStringDesc                   0x080042f8   Section        0  usbh_ctlreq.o(i.USBH_ParseStringDesc)
+    USBH_ParseStringDesc                     0x080042f9   Thumb Code    54  usbh_ctlreq.o(i.USBH_ParseStringDesc)
+    i.USBH_Process                           0x08004330   Section        0  usbh_core.o(i.USBH_Process)
+    i.USBH_RNDIS_Get_Encapsulated_Response   0x08004728   Section        0  rndis.o(i.USBH_RNDIS_Get_Encapsulated_Response)
+    i.USBH_RNDIS_Get_Initialisation_Complete 0x0800474c   Section        0  rndis.o(i.USBH_RNDIS_Get_Initialisation_Complete)
+    i.USBH_RNDIS_Get_SetResponse             0x080047a8   Section        0  rndis.o(i.USBH_RNDIS_Get_SetResponse)
+    i.USBH_RNDIS_Get_Specific_Oid            0x080047e4   Section        0  rndis.o(i.USBH_RNDIS_Get_Specific_Oid)
+    i.USBH_RNDIS_Query_Specific_Oid          0x08004830   Section        0  rndis.o(i.USBH_RNDIS_Query_Specific_Oid)
+    i.USBH_RNDIS_Send_Encapsulated_Command   0x0800487c   Section        0  rndis.o(i.USBH_RNDIS_Send_Encapsulated_Command)
+    i.USBH_RNDIS_Send_Initialisation_Message 0x080048a0   Section        0  rndis.o(i.USBH_RNDIS_Send_Initialisation_Message)
+    i.USBH_RNDIS_Set_Oid_Property            0x080048d4   Section        0  rndis.o(i.USBH_RNDIS_Set_Oid_Property)
     i.USBH_RegisterClass                     0x08004920   Section        0  usbh_core.o(i.USBH_RegisterClass)
     i.USBH_SelectInterface                   0x0800494a   Section        0  usbh_core.o(i.USBH_SelectInterface)
     i.USBH_SetAddress                        0x08004960   Section        0  usbh_ctlreq.o(i.USBH_SetAddress)
@@ -2628,7 +2629,7 @@ Image Symbol Table
     recv_flags                               0x200000f4   Data           1  tcp_in.o(.data)
     recv_data                                0x200000f8   Data           4  tcp_in.o(.data)
     .data                                    0x20000100   Section        1  pbuf.o(.data)
-    .data                                    0x20000104   Section       12  usbh_core.o(.data)
+    .data                                    0x20000104   Section       10  usbh_core.o(.data)
     .data                                    0x20000110   Section       33  usbh_cdc.o(.data)
     .data                                    0x20000134   Section        4  rand.o(.data)
     _rand_state                              0x20000134   Data           4  rand.o(.data)
@@ -2648,9 +2649,9 @@ Image Symbol Table
     .bss                                     0x20006f3c   Section       16  tcp_in.o(.bss)
     inseg                                    0x20006f3c   Data          16  tcp_in.o(.bss)
     .bss                                     0x20006f4c   Section      108  usbh_core.o(.bss)
-    .bss                                     0x20006fb8   Section      140  rndis.o(.bss)
-    HEAP                                     0x20007048   Section      512  startup_stm32f407xx.o(HEAP)
-    STACK                                    0x20007248   Section     1024  startup_stm32f407xx.o(STACK)
+    .bss                                     0x20006fb8   Section      280  rndis.o(.bss)
+    HEAP                                     0x200070d0   Section      512  startup_stm32f407xx.o(HEAP)
+    STACK                                    0x200072d0   Section     1024  startup_stm32f407xx.o(STACK)
 
     Global Symbols
 
@@ -2839,49 +2840,49 @@ Image Symbol Table
     USBH_AllocPipe                           0x08003585   Thumb Code    38  usbh_pipes.o(i.USBH_AllocPipe)
     USBH_BulkReceiveData                     0x080035ab   Thumb Code    42  usbh_ioreq.o(i.USBH_BulkReceiveData)
     USBH_BulkSendData                        0x080035d5   Thumb Code    52  usbh_ioreq.o(i.USBH_BulkSendData)
-    USBH_CDC_ReceiveCallback                 0x08003951   Thumb Code     2  usbh_cdc.o(i.USBH_CDC_ReceiveCallback)
-    USBH_CDC_TransmitCallback                0x08003959   Thumb Code     2  usbh_cdc.o(i.USBH_CDC_TransmitCallback)
-    USBH_ClosePipe                           0x0800395b   Thumb Code    18  usbh_pipes.o(i.USBH_ClosePipe)
-    USBH_ClrFeature                          0x0800396d   Thumb Code    40  usbh_ctlreq.o(i.USBH_ClrFeature)
-    USBH_CtlReceiveData                      0x08003995   Thumb Code    42  usbh_ioreq.o(i.USBH_CtlReceiveData)
-    USBH_CtlReq                              0x080039bf   Thumb Code    84  usbh_ctlreq.o(i.USBH_CtlReq)
-    USBH_CtlSendData                         0x08003a13   Thumb Code    52  usbh_ioreq.o(i.USBH_CtlSendData)
-    USBH_CtlSendSetup                        0x08003a47   Thumb Code    38  usbh_ioreq.o(i.USBH_CtlSendSetup)
-    USBH_Delay                               0x08003a6d   Thumb Code    12  usbh_conf.o(i.USBH_Delay)
-    USBH_FindInterface                       0x08003a79   Thumb Code    80  usbh_core.o(i.USBH_FindInterface)
-    USBH_FreePipe                            0x08003ac9   Thumb Code    30  usbh_pipes.o(i.USBH_FreePipe)
-    USBH_GetDescriptor                       0x08003ae7   Thumb Code    74  usbh_ctlreq.o(i.USBH_GetDescriptor)
-    USBH_GetNextDesc                         0x08003b59   Thumb Code    18  usbh_ctlreq.o(i.USBH_GetNextDesc)
-    USBH_Get_CfgDesc                         0x08003b6b   Thumb Code    46  usbh_ctlreq.o(i.USBH_Get_CfgDesc)
-    USBH_Get_DevDesc                         0x08003b99   Thumb Code    46  usbh_ctlreq.o(i.USBH_Get_DevDesc)
-    USBH_Get_StringDesc                      0x08003bc7   Thumb Code    54  usbh_ctlreq.o(i.USBH_Get_StringDesc)
-    USBH_Init                                0x08003f31   Thumb Code    50  usbh_core.o(i.USBH_Init)
-    USBH_LL_ClosePipe                        0x08003f63   Thumb Code    20  usbh_conf.o(i.USBH_LL_ClosePipe)
-    USBH_LL_Connect                          0x08003f77   Thumb Code    46  usbh_core.o(i.USBH_LL_Connect)
-    USBH_LL_Disconnect                       0x08003fa5   Thumb Code    62  usbh_core.o(i.USBH_LL_Disconnect)
-    USBH_LL_DriverVBUS                       0x08003fe3   Thumb Code    24  usbh_conf.o(i.USBH_LL_DriverVBUS)
-    USBH_LL_GetLastXferSize                  0x08003ffb   Thumb Code    18  usbh_conf.o(i.USBH_LL_GetLastXferSize)
-    USBH_LL_GetSpeed                         0x0800400d   Thumb Code    48  usbh_conf.o(i.USBH_LL_GetSpeed)
-    USBH_LL_GetURBState                      0x0800403d   Thumb Code    18  usbh_conf.o(i.USBH_LL_GetURBState)
-    USBH_LL_IncTimer                         0x0800404f   Thumb Code    22  usbh_core.o(i.USBH_LL_IncTimer)
-    USBH_LL_Init                             0x08004065   Thumb Code    88  usbh_conf.o(i.USBH_LL_Init)
-    USBH_LL_OpenPipe                         0x080040c5   Thumb Code    44  usbh_conf.o(i.USBH_LL_OpenPipe)
-    USBH_LL_ResetPort                        0x080040f1   Thumb Code    16  usbh_conf.o(i.USBH_LL_ResetPort)
-    USBH_LL_SetTimer                         0x08004101   Thumb Code     6  usbh_core.o(i.USBH_LL_SetTimer)
-    USBH_LL_SetToggle                        0x08004107   Thumb Code    58  usbh_conf.o(i.USBH_LL_SetToggle)
-    USBH_LL_Start                            0x08004141   Thumb Code    16  usbh_conf.o(i.USBH_LL_Start)
-    USBH_LL_Stop                             0x08004151   Thumb Code    16  usbh_conf.o(i.USBH_LL_Stop)
-    USBH_LL_SubmitURB                        0x08004161   Thumb Code    46  usbh_conf.o(i.USBH_LL_SubmitURB)
-    USBH_OpenPipe                            0x0800418f   Thumb Code    42  usbh_pipes.o(i.USBH_OpenPipe)
-    USBH_Process                             0x08004369   Thumb Code   996  usbh_core.o(i.USBH_Process)
-    USBH_RNDIS_Get_Encapsulated_Response     0x08004761   Thumb Code    36  rndis.o(i.USBH_RNDIS_Get_Encapsulated_Response)
-    USBH_RNDIS_Get_Initialisation_Complete   0x08004785   Thumb Code    90  rndis.o(i.USBH_RNDIS_Get_Initialisation_Complete)
-    USBH_RNDIS_Get_SetResponse               0x080047e5   Thumb Code    48  rndis.o(i.USBH_RNDIS_Get_SetResponse)
-    USBH_RNDIS_Get_Specific_Oid              0x08004819   Thumb Code    64  rndis.o(i.USBH_RNDIS_Get_Specific_Oid)
-    USBH_RNDIS_Query_Specific_Oid            0x0800485d   Thumb Code    42  rndis.o(i.USBH_RNDIS_Query_Specific_Oid)
-    USBH_RNDIS_Send_Encapsulated_Command     0x0800488d   Thumb Code    34  rndis.o(i.USBH_RNDIS_Send_Encapsulated_Command)
-    USBH_RNDIS_Send_Initialisation_Message   0x080048b1   Thumb Code    46  rndis.o(i.USBH_RNDIS_Send_Initialisation_Message)
-    USBH_RNDIS_Set_Oid_Property              0x080048e5   Thumb Code    56  rndis.o(i.USBH_RNDIS_Set_Oid_Property)
+    USBH_CDC_ReceiveCallback                 0x08003917   Thumb Code     2  usbh_cdc.o(i.USBH_CDC_ReceiveCallback)
+    USBH_CDC_TransmitCallback                0x0800391f   Thumb Code     2  usbh_cdc.o(i.USBH_CDC_TransmitCallback)
+    USBH_ClosePipe                           0x08003921   Thumb Code    18  usbh_pipes.o(i.USBH_ClosePipe)
+    USBH_ClrFeature                          0x08003933   Thumb Code    40  usbh_ctlreq.o(i.USBH_ClrFeature)
+    USBH_CtlReceiveData                      0x0800395b   Thumb Code    42  usbh_ioreq.o(i.USBH_CtlReceiveData)
+    USBH_CtlReq                              0x08003985   Thumb Code    84  usbh_ctlreq.o(i.USBH_CtlReq)
+    USBH_CtlSendData                         0x080039d9   Thumb Code    52  usbh_ioreq.o(i.USBH_CtlSendData)
+    USBH_CtlSendSetup                        0x08003a0d   Thumb Code    38  usbh_ioreq.o(i.USBH_CtlSendSetup)
+    USBH_Delay                               0x08003a33   Thumb Code    12  usbh_conf.o(i.USBH_Delay)
+    USBH_FindInterface                       0x08003a3f   Thumb Code    80  usbh_core.o(i.USBH_FindInterface)
+    USBH_FreePipe                            0x08003a8f   Thumb Code    30  usbh_pipes.o(i.USBH_FreePipe)
+    USBH_GetDescriptor                       0x08003aad   Thumb Code    74  usbh_ctlreq.o(i.USBH_GetDescriptor)
+    USBH_GetNextDesc                         0x08003b1f   Thumb Code    18  usbh_ctlreq.o(i.USBH_GetNextDesc)
+    USBH_Get_CfgDesc                         0x08003b31   Thumb Code    46  usbh_ctlreq.o(i.USBH_Get_CfgDesc)
+    USBH_Get_DevDesc                         0x08003b5f   Thumb Code    46  usbh_ctlreq.o(i.USBH_Get_DevDesc)
+    USBH_Get_StringDesc                      0x08003b8d   Thumb Code    54  usbh_ctlreq.o(i.USBH_Get_StringDesc)
+    USBH_Init                                0x08003ef7   Thumb Code    50  usbh_core.o(i.USBH_Init)
+    USBH_LL_ClosePipe                        0x08003f29   Thumb Code    20  usbh_conf.o(i.USBH_LL_ClosePipe)
+    USBH_LL_Connect                          0x08003f3d   Thumb Code    46  usbh_core.o(i.USBH_LL_Connect)
+    USBH_LL_Disconnect                       0x08003f6b   Thumb Code    62  usbh_core.o(i.USBH_LL_Disconnect)
+    USBH_LL_DriverVBUS                       0x08003fa9   Thumb Code    24  usbh_conf.o(i.USBH_LL_DriverVBUS)
+    USBH_LL_GetLastXferSize                  0x08003fc1   Thumb Code    18  usbh_conf.o(i.USBH_LL_GetLastXferSize)
+    USBH_LL_GetSpeed                         0x08003fd3   Thumb Code    48  usbh_conf.o(i.USBH_LL_GetSpeed)
+    USBH_LL_GetURBState                      0x08004003   Thumb Code    18  usbh_conf.o(i.USBH_LL_GetURBState)
+    USBH_LL_IncTimer                         0x08004015   Thumb Code    22  usbh_core.o(i.USBH_LL_IncTimer)
+    USBH_LL_Init                             0x0800402d   Thumb Code    88  usbh_conf.o(i.USBH_LL_Init)
+    USBH_LL_OpenPipe                         0x0800408d   Thumb Code    44  usbh_conf.o(i.USBH_LL_OpenPipe)
+    USBH_LL_ResetPort                        0x080040b9   Thumb Code    16  usbh_conf.o(i.USBH_LL_ResetPort)
+    USBH_LL_SetTimer                         0x080040c9   Thumb Code     6  usbh_core.o(i.USBH_LL_SetTimer)
+    USBH_LL_SetToggle                        0x080040cf   Thumb Code    58  usbh_conf.o(i.USBH_LL_SetToggle)
+    USBH_LL_Start                            0x08004109   Thumb Code    16  usbh_conf.o(i.USBH_LL_Start)
+    USBH_LL_Stop                             0x08004119   Thumb Code    16  usbh_conf.o(i.USBH_LL_Stop)
+    USBH_LL_SubmitURB                        0x08004129   Thumb Code    46  usbh_conf.o(i.USBH_LL_SubmitURB)
+    USBH_OpenPipe                            0x08004157   Thumb Code    42  usbh_pipes.o(i.USBH_OpenPipe)
+    USBH_Process                             0x08004331   Thumb Code   996  usbh_core.o(i.USBH_Process)
+    USBH_RNDIS_Get_Encapsulated_Response     0x08004729   Thumb Code    36  rndis.o(i.USBH_RNDIS_Get_Encapsulated_Response)
+    USBH_RNDIS_Get_Initialisation_Complete   0x0800474d   Thumb Code    88  rndis.o(i.USBH_RNDIS_Get_Initialisation_Complete)
+    USBH_RNDIS_Get_SetResponse               0x080047a9   Thumb Code    54  rndis.o(i.USBH_RNDIS_Get_SetResponse)
+    USBH_RNDIS_Get_Specific_Oid              0x080047e5   Thumb Code    70  rndis.o(i.USBH_RNDIS_Get_Specific_Oid)
+    USBH_RNDIS_Query_Specific_Oid            0x08004831   Thumb Code    70  rndis.o(i.USBH_RNDIS_Query_Specific_Oid)
+    USBH_RNDIS_Send_Encapsulated_Command     0x0800487d   Thumb Code    34  rndis.o(i.USBH_RNDIS_Send_Encapsulated_Command)
+    USBH_RNDIS_Send_Initialisation_Message   0x080048a1   Thumb Code    46  rndis.o(i.USBH_RNDIS_Send_Initialisation_Message)
+    USBH_RNDIS_Set_Oid_Property              0x080048d5   Thumb Code    72  rndis.o(i.USBH_RNDIS_Set_Oid_Property)
     USBH_RegisterClass                       0x08004921   Thumb Code    42  usbh_core.o(i.USBH_RegisterClass)
     USBH_SelectInterface                     0x0800494b   Thumb Code    22  usbh_core.o(i.USBH_SelectInterface)
     USBH_SetAddress                          0x08004961   Thumb Code    40  usbh_ctlreq.o(i.USBH_SetAddress)
@@ -3066,7 +3067,7 @@ Image Symbol Table
     host_class_request_index                 0x20000104   Data           1  usbh_core.o(.data)
     usbh_busy_index                          0x20000105   Data           1  usbh_core.o(.data)
     oid_supported_buf                        0x20000108   Data           4  usbh_core.o(.data)
-    data_to_set                              0x2000010c   Data           4  usbh_core.o(.data)
+    data_to_set                              0x2000010c   Data           2  usbh_core.o(.data)
     CDC_Class                                0x20000110   Data          32  usbh_cdc.o(.data)
     cdc_index                                0x20000130   Data           1  usbh_cdc.o(.data)
     __microlib_freelist                      0x20000138   Data           4  mvars.o(.data)
@@ -3094,10 +3095,11 @@ Image Symbol Table
     dhcp_rx_options_given                    0x20006e28   Data          10  dhcp.o(.bss)
     ip_data                                  0x20006f24   Data          24  ip4.o(.bss)
     RNDIS_Data_buf                           0x20006f4c   Data         108  usbh_core.o(.bss)
-    encap_buf                                0x20006fb8   Data         140  rndis.o(.bss)
-    __heap_base                              0x20007048   Data           0  startup_stm32f407xx.o(HEAP)
-    __heap_limit                             0x20007248   Data           0  startup_stm32f407xx.o(HEAP)
-    __initial_sp                             0x20007648   Data           0  startup_stm32f407xx.o(STACK)
+    encap_buf_rx                             0x20006fb8   Data         140  rndis.o(.bss)
+    encap_buf_tx                             0x20007044   Data         140  rndis.o(.bss)
+    __heap_base                              0x200070d0   Data           0  startup_stm32f407xx.o(HEAP)
+    __heap_limit                             0x200072d0   Data           0  startup_stm32f407xx.o(HEAP)
+    __initial_sp                             0x200076d0   Data           0  startup_stm32f407xx.o(STACK)
 
 
 
@@ -3114,23 +3116,23 @@ Memory Map of the image
     Base Addr    Size         Type   Attr      Idx    E Section Name        Object
 
     0x08000000   0x00000188   Data   RO         2731    RESET               startup_stm32f407xx.o
-    0x08000188   0x00000000   Code   RO         6159  * .ARM.Collect$$$$00000000  mc_w.l(entry.o)
-    0x08000188   0x00000004   Code   RO         6203    .ARM.Collect$$$$00000001  mc_w.l(entry2.o)
-    0x0800018c   0x00000004   Code   RO         6206    .ARM.Collect$$$$00000004  mc_w.l(entry5.o)
-    0x08000190   0x00000000   Code   RO         6208    .ARM.Collect$$$$00000008  mc_w.l(entry7b.o)
-    0x08000190   0x00000000   Code   RO         6210    .ARM.Collect$$$$0000000A  mc_w.l(entry8b.o)
-    0x08000190   0x00000008   Code   RO         6211    .ARM.Collect$$$$0000000B  mc_w.l(entry9a.o)
-    0x08000198   0x00000000   Code   RO         6213    .ARM.Collect$$$$0000000D  mc_w.l(entry10a.o)
-    0x08000198   0x00000000   Code   RO         6215    .ARM.Collect$$$$0000000F  mc_w.l(entry11a.o)
-    0x08000198   0x00000004   Code   RO         6204    .ARM.Collect$$$$00002712  mc_w.l(entry2.o)
+    0x08000188   0x00000000   Code   RO         6160  * .ARM.Collect$$$$00000000  mc_w.l(entry.o)
+    0x08000188   0x00000004   Code   RO         6204    .ARM.Collect$$$$00000001  mc_w.l(entry2.o)
+    0x0800018c   0x00000004   Code   RO         6207    .ARM.Collect$$$$00000004  mc_w.l(entry5.o)
+    0x08000190   0x00000000   Code   RO         6209    .ARM.Collect$$$$00000008  mc_w.l(entry7b.o)
+    0x08000190   0x00000000   Code   RO         6211    .ARM.Collect$$$$0000000A  mc_w.l(entry8b.o)
+    0x08000190   0x00000008   Code   RO         6212    .ARM.Collect$$$$0000000B  mc_w.l(entry9a.o)
+    0x08000198   0x00000000   Code   RO         6214    .ARM.Collect$$$$0000000D  mc_w.l(entry10a.o)
+    0x08000198   0x00000000   Code   RO         6216    .ARM.Collect$$$$0000000F  mc_w.l(entry11a.o)
+    0x08000198   0x00000004   Code   RO         6205    .ARM.Collect$$$$00002712  mc_w.l(entry2.o)
     0x0800019c   0x00000024   Code   RO         2732    .text               startup_stm32f407xx.o
-    0x080001c0   0x00000024   Code   RO         6162    .text               mc_w.l(rand.o)
-    0x080001e4   0x00000024   Code   RO         6165    .text               mc_w.l(memcpya.o)
-    0x08000208   0x00000024   Code   RO         6167    .text               mc_w.l(memseta.o)
-    0x0800022c   0x0000001a   Code   RO         6171    .text               mc_w.l(memcmp.o)
+    0x080001c0   0x00000024   Code   RO         6163    .text               mc_w.l(rand.o)
+    0x080001e4   0x00000024   Code   RO         6166    .text               mc_w.l(memcpya.o)
+    0x08000208   0x00000024   Code   RO         6168    .text               mc_w.l(memseta.o)
+    0x0800022c   0x0000001a   Code   RO         6172    .text               mc_w.l(memcmp.o)
     0x08000246   0x00000002   PAD
-    0x08000248   0x00000024   Code   RO         6219    .text               mc_w.l(init.o)
-    0x0800026c   0x00000056   Code   RO         6229    .text               mc_w.l(__dczerorl2.o)
+    0x08000248   0x00000024   Code   RO         6220    .text               mc_w.l(init.o)
+    0x0800026c   0x00000056   Code   RO         6230    .text               mc_w.l(__dczerorl2.o)
     0x080002c2   0x00000004   Code   RO         2126    i.BusFault_Handler  stm32f4xx_it.o
     0x080002c6   0x0000007e   Code   RO         5951    i.CDC_ProcessReception  usbh_cdc.o
     0x08000344   0x000000a6   Code   RO         5952    i.CDC_ProcessTransmission  usbh_cdc.o
@@ -3230,63 +3232,63 @@ Memory Map of the image
     0x08003608   0x00000028   Code   RO         5955    i.USBH_CDC_ClassRequest  usbh_cdc.o
     0x08003630   0x00000070   Code   RO         5958    i.USBH_CDC_InterfaceDeInit  usbh_cdc.o
     0x080036a0   0x000001f6   Code   RO         5959    i.USBH_CDC_InterfaceInit  usbh_cdc.o
-    0x08003896   0x00000002   PAD
-    0x08003898   0x000000b8   Code   RO         5961    i.USBH_CDC_Process  usbh_cdc.o
-    0x08003950   0x00000002   Code   RO         5963    i.USBH_CDC_ReceiveCallback  usbh_cdc.o
-    0x08003952   0x00000006   Code   RO         5964    i.USBH_CDC_SOFProcess  usbh_cdc.o
-    0x08003958   0x00000002   Code   RO         5968    i.USBH_CDC_TransmitCallback  usbh_cdc.o
-    0x0800395a   0x00000012   Code   RO         5664    i.USBH_ClosePipe    usbh_pipes.o
-    0x0800396c   0x00000028   Code   RO         5843    i.USBH_ClrFeature   usbh_ctlreq.o
-    0x08003994   0x0000002a   Code   RO         5593    i.USBH_CtlReceiveData  usbh_ioreq.o
-    0x080039be   0x00000054   Code   RO         5844    i.USBH_CtlReq       usbh_ctlreq.o
-    0x08003a12   0x00000034   Code   RO         5594    i.USBH_CtlSendData  usbh_ioreq.o
-    0x08003a46   0x00000026   Code   RO         5595    i.USBH_CtlSendSetup  usbh_ioreq.o
-    0x08003a6c   0x0000000c   Code   RO         2517    i.USBH_Delay        usbh_conf.o
-    0x08003a78   0x00000050   Code   RO         5712    i.USBH_FindInterface  usbh_core.o
-    0x08003ac8   0x0000001e   Code   RO         5665    i.USBH_FreePipe     usbh_pipes.o
-    0x08003ae6   0x0000004a   Code   RO         5845    i.USBH_GetDescriptor  usbh_ctlreq.o
-    0x08003b30   0x00000028   Code   RO         5666    i.USBH_GetFreePipe  usbh_pipes.o
-    0x08003b58   0x00000012   Code   RO         5846    i.USBH_GetNextDesc  usbh_ctlreq.o
-    0x08003b6a   0x0000002e   Code   RO         5847    i.USBH_Get_CfgDesc  usbh_ctlreq.o
-    0x08003b98   0x0000002e   Code   RO         5848    i.USBH_Get_DevDesc  usbh_ctlreq.o
-    0x08003bc6   0x00000036   Code   RO         5849    i.USBH_Get_StringDesc  usbh_ctlreq.o
-    0x08003bfc   0x000001be   Code   RO         5850    i.USBH_HandleControl  usbh_ctlreq.o
-    0x08003dba   0x0000015a   Code   RO         5715    i.USBH_HandleEnum   usbh_core.o
-    0x08003f14   0x0000001c   Code   RO         5716    i.USBH_HandleSof    usbh_core.o
-    0x08003f30   0x00000032   Code   RO         5717    i.USBH_Init         usbh_core.o
-    0x08003f62   0x00000014   Code   RO         2518    i.USBH_LL_ClosePipe  usbh_conf.o
-    0x08003f76   0x0000002e   Code   RO         5718    i.USBH_LL_Connect   usbh_core.o
-    0x08003fa4   0x0000003e   Code   RO         5719    i.USBH_LL_Disconnect  usbh_core.o
-    0x08003fe2   0x00000018   Code   RO         2520    i.USBH_LL_DriverVBUS  usbh_conf.o
-    0x08003ffa   0x00000012   Code   RO         2521    i.USBH_LL_GetLastXferSize  usbh_conf.o
-    0x0800400c   0x00000030   Code   RO         2522    i.USBH_LL_GetSpeed  usbh_conf.o
-    0x0800403c   0x00000012   Code   RO         2524    i.USBH_LL_GetURBState  usbh_conf.o
-    0x0800404e   0x00000016   Code   RO         5720    i.USBH_LL_IncTimer  usbh_core.o
-    0x08004064   0x00000060   Code   RO         2525    i.USBH_LL_Init      usbh_conf.o
-    0x080040c4   0x0000002c   Code   RO         2526    i.USBH_LL_OpenPipe  usbh_conf.o
-    0x080040f0   0x00000010   Code   RO         2527    i.USBH_LL_ResetPort  usbh_conf.o
-    0x08004100   0x00000006   Code   RO         5721    i.USBH_LL_SetTimer  usbh_core.o
-    0x08004106   0x0000003a   Code   RO         2528    i.USBH_LL_SetToggle  usbh_conf.o
-    0x08004140   0x00000010   Code   RO         2529    i.USBH_LL_Start     usbh_conf.o
-    0x08004150   0x00000010   Code   RO         2530    i.USBH_LL_Stop      usbh_conf.o
-    0x08004160   0x0000002e   Code   RO         2531    i.USBH_LL_SubmitURB  usbh_conf.o
-    0x0800418e   0x0000002a   Code   RO         5667    i.USBH_OpenPipe     usbh_pipes.o
-    0x080041b8   0x000000da   Code   RO         5851    i.USBH_ParseCfgDesc  usbh_ctlreq.o
-    0x08004292   0x00000058   Code   RO         5852    i.USBH_ParseDevDesc  usbh_ctlreq.o
-    0x080042ea   0x00000020   Code   RO         5853    i.USBH_ParseEPDesc  usbh_ctlreq.o
-    0x0800430a   0x00000026   Code   RO         5854    i.USBH_ParseInterfaceDesc  usbh_ctlreq.o
-    0x08004330   0x00000036   Code   RO         5855    i.USBH_ParseStringDesc  usbh_ctlreq.o
-    0x08004366   0x00000002   PAD
-    0x08004368   0x000003f8   Code   RO         5722    i.USBH_Process      usbh_core.o
-    0x08004760   0x00000024   Code   RO         6075    i.USBH_RNDIS_Get_Encapsulated_Response  rndis.o
-    0x08004784   0x00000060   Code   RO         6076    i.USBH_RNDIS_Get_Initialisation_Complete  rndis.o
-    0x080047e4   0x00000034   Code   RO         6078    i.USBH_RNDIS_Get_SetResponse  rndis.o
-    0x08004818   0x00000044   Code   RO         6079    i.USBH_RNDIS_Get_Specific_Oid  rndis.o
-    0x0800485c   0x00000030   Code   RO         6081    i.USBH_RNDIS_Query_Specific_Oid  rndis.o
-    0x0800488c   0x00000022   Code   RO         6083    i.USBH_RNDIS_Send_Encapsulated_Command  rndis.o
-    0x080048ae   0x00000002   PAD
-    0x080048b0   0x00000034   Code   RO         6084    i.USBH_RNDIS_Send_Initialisation_Message  rndis.o
-    0x080048e4   0x0000003c   Code   RO         6085    i.USBH_RNDIS_Set_Oid_Property  rndis.o
+    0x08003896   0x00000080   Code   RO         5961    i.USBH_CDC_Process  usbh_cdc.o
+    0x08003916   0x00000002   Code   RO         5963    i.USBH_CDC_ReceiveCallback  usbh_cdc.o
+    0x08003918   0x00000006   Code   RO         5964    i.USBH_CDC_SOFProcess  usbh_cdc.o
+    0x0800391e   0x00000002   Code   RO         5968    i.USBH_CDC_TransmitCallback  usbh_cdc.o
+    0x08003920   0x00000012   Code   RO         5664    i.USBH_ClosePipe    usbh_pipes.o
+    0x08003932   0x00000028   Code   RO         5843    i.USBH_ClrFeature   usbh_ctlreq.o
+    0x0800395a   0x0000002a   Code   RO         5593    i.USBH_CtlReceiveData  usbh_ioreq.o
+    0x08003984   0x00000054   Code   RO         5844    i.USBH_CtlReq       usbh_ctlreq.o
+    0x080039d8   0x00000034   Code   RO         5594    i.USBH_CtlSendData  usbh_ioreq.o
+    0x08003a0c   0x00000026   Code   RO         5595    i.USBH_CtlSendSetup  usbh_ioreq.o
+    0x08003a32   0x0000000c   Code   RO         2517    i.USBH_Delay        usbh_conf.o
+    0x08003a3e   0x00000050   Code   RO         5712    i.USBH_FindInterface  usbh_core.o
+    0x08003a8e   0x0000001e   Code   RO         5665    i.USBH_FreePipe     usbh_pipes.o
+    0x08003aac   0x0000004a   Code   RO         5845    i.USBH_GetDescriptor  usbh_ctlreq.o
+    0x08003af6   0x00000028   Code   RO         5666    i.USBH_GetFreePipe  usbh_pipes.o
+    0x08003b1e   0x00000012   Code   RO         5846    i.USBH_GetNextDesc  usbh_ctlreq.o
+    0x08003b30   0x0000002e   Code   RO         5847    i.USBH_Get_CfgDesc  usbh_ctlreq.o
+    0x08003b5e   0x0000002e   Code   RO         5848    i.USBH_Get_DevDesc  usbh_ctlreq.o
+    0x08003b8c   0x00000036   Code   RO         5849    i.USBH_Get_StringDesc  usbh_ctlreq.o
+    0x08003bc2   0x000001be   Code   RO         5850    i.USBH_HandleControl  usbh_ctlreq.o
+    0x08003d80   0x0000015a   Code   RO         5715    i.USBH_HandleEnum   usbh_core.o
+    0x08003eda   0x0000001c   Code   RO         5716    i.USBH_HandleSof    usbh_core.o
+    0x08003ef6   0x00000032   Code   RO         5717    i.USBH_Init         usbh_core.o
+    0x08003f28   0x00000014   Code   RO         2518    i.USBH_LL_ClosePipe  usbh_conf.o
+    0x08003f3c   0x0000002e   Code   RO         5718    i.USBH_LL_Connect   usbh_core.o
+    0x08003f6a   0x0000003e   Code   RO         5719    i.USBH_LL_Disconnect  usbh_core.o
+    0x08003fa8   0x00000018   Code   RO         2520    i.USBH_LL_DriverVBUS  usbh_conf.o
+    0x08003fc0   0x00000012   Code   RO         2521    i.USBH_LL_GetLastXferSize  usbh_conf.o
+    0x08003fd2   0x00000030   Code   RO         2522    i.USBH_LL_GetSpeed  usbh_conf.o
+    0x08004002   0x00000012   Code   RO         2524    i.USBH_LL_GetURBState  usbh_conf.o
+    0x08004014   0x00000016   Code   RO         5720    i.USBH_LL_IncTimer  usbh_core.o
+    0x0800402a   0x00000002   PAD
+    0x0800402c   0x00000060   Code   RO         2525    i.USBH_LL_Init      usbh_conf.o
+    0x0800408c   0x0000002c   Code   RO         2526    i.USBH_LL_OpenPipe  usbh_conf.o
+    0x080040b8   0x00000010   Code   RO         2527    i.USBH_LL_ResetPort  usbh_conf.o
+    0x080040c8   0x00000006   Code   RO         5721    i.USBH_LL_SetTimer  usbh_core.o
+    0x080040ce   0x0000003a   Code   RO         2528    i.USBH_LL_SetToggle  usbh_conf.o
+    0x08004108   0x00000010   Code   RO         2529    i.USBH_LL_Start     usbh_conf.o
+    0x08004118   0x00000010   Code   RO         2530    i.USBH_LL_Stop      usbh_conf.o
+    0x08004128   0x0000002e   Code   RO         2531    i.USBH_LL_SubmitURB  usbh_conf.o
+    0x08004156   0x0000002a   Code   RO         5667    i.USBH_OpenPipe     usbh_pipes.o
+    0x08004180   0x000000da   Code   RO         5851    i.USBH_ParseCfgDesc  usbh_ctlreq.o
+    0x0800425a   0x00000058   Code   RO         5852    i.USBH_ParseDevDesc  usbh_ctlreq.o
+    0x080042b2   0x00000020   Code   RO         5853    i.USBH_ParseEPDesc  usbh_ctlreq.o
+    0x080042d2   0x00000026   Code   RO         5854    i.USBH_ParseInterfaceDesc  usbh_ctlreq.o
+    0x080042f8   0x00000036   Code   RO         5855    i.USBH_ParseStringDesc  usbh_ctlreq.o
+    0x0800432e   0x00000002   PAD
+    0x08004330   0x000003f8   Code   RO         5722    i.USBH_Process      usbh_core.o
+    0x08004728   0x00000024   Code   RO         6075    i.USBH_RNDIS_Get_Encapsulated_Response  rndis.o
+    0x0800474c   0x0000005c   Code   RO         6076    i.USBH_RNDIS_Get_Initialisation_Complete  rndis.o
+    0x080047a8   0x0000003c   Code   RO         6078    i.USBH_RNDIS_Get_SetResponse  rndis.o
+    0x080047e4   0x0000004c   Code   RO         6079    i.USBH_RNDIS_Get_Specific_Oid  rndis.o
+    0x08004830   0x0000004c   Code   RO         6081    i.USBH_RNDIS_Query_Specific_Oid  rndis.o
+    0x0800487c   0x00000022   Code   RO         6083    i.USBH_RNDIS_Send_Encapsulated_Command  rndis.o
+    0x0800489e   0x00000002   PAD
+    0x080048a0   0x00000034   Code   RO         6084    i.USBH_RNDIS_Send_Initialisation_Message  rndis.o
+    0x080048d4   0x0000004c   Code   RO         6085    i.USBH_RNDIS_Set_Oid_Property  rndis.o
     0x08004920   0x0000002a   Code   RO         5724    i.USBH_RegisterClass  usbh_core.o
     0x0800494a   0x00000016   Code   RO         5725    i.USBH_SelectInterface  usbh_core.o
     0x08004960   0x00000028   Code   RO         5856    i.USBH_SetAddress   usbh_ctlreq.o
@@ -3320,9 +3322,9 @@ Memory Map of the image
     0x080051f8   0x000000ae   Code   RO         1014    i.USB_StopHost      stm32f4xx_ll_usb.o
     0x080052a6   0x00000030   Code   RO         1015    i.USB_WritePacket   stm32f4xx_ll_usb.o
     0x080052d6   0x00000004   Code   RO         2135    i.UsageFault_Handler  stm32f4xx_it.o
-    0x080052da   0x0000000e   Code   RO         6223    i.__scatterload_copy  mc_w.l(handlers.o)
-    0x080052e8   0x00000002   Code   RO         6224    i.__scatterload_null  mc_w.l(handlers.o)
-    0x080052ea   0x0000000e   Code   RO         6225    i.__scatterload_zeroinit  mc_w.l(handlers.o)
+    0x080052da   0x0000000e   Code   RO         6224    i.__scatterload_copy  mc_w.l(handlers.o)
+    0x080052e8   0x00000002   Code   RO         6225    i.__scatterload_null  mc_w.l(handlers.o)
+    0x080052ea   0x0000000e   Code   RO         6226    i.__scatterload_zeroinit  mc_w.l(handlers.o)
     0x080052f8   0x0000001c   Code   RO         4559    i.arp_timer         lwip_timers.o
     0x08005314   0x0000002e   Code   RO         3789    i.dhcp_arp_reply    dhcp.o
     0x08005342   0x00000102   Code   RO         3790    i.dhcp_bind         dhcp.o
@@ -3375,7 +3377,7 @@ Memory Map of the image
     0x08006c0c   0x000000b8   Code   RO         4187    i.etharp_update_arp_entry  etharp.o
     0x08006cc4   0x000000b8   Code   RO         4188    i.ethernet_input    etharp.o
     0x08006d7c   0x00000030   Code   RO         2430    i.ethernetif_init   ethernetif.o
-    0x08006dac   0x00000050   Code   RO         6175    i.free              mc_w.l(malloc.o)
+    0x08006dac   0x00000050   Code   RO         6176    i.free              mc_w.l(malloc.o)
     0x08006dfc   0x00000012   Code   RO         4518    i.icmp_dest_unreach  icmp.o
     0x08006e0e   0x00000002   PAD
     0x08006e10   0x00000164   Code   RO         4519    i.icmp_input        icmp.o
@@ -3408,7 +3410,7 @@ Memory Map of the image
     0x08007cc6   0x0000000c   Code   RO         4290    i.lwip_ntohs        def.o
     0x08007cd2   0x00000024   Code   RO         2213    i.main              main.o
     0x08007cf6   0x00000002   PAD
-    0x08007cf8   0x0000006c   Code   RO         6176    i.malloc            mc_w.l(malloc.o)
+    0x08007cf8   0x0000006c   Code   RO         6177    i.malloc            mc_w.l(malloc.o)
     0x08007d64   0x00000050   Code   RO         3426    i.mem_free          mem.o
     0x08007db4   0x0000005c   Code   RO         3427    i.mem_init          mem.o
     0x08007e10   0x000000ec   Code   RO         3428    i.mem_malloc        mem.o
@@ -3527,10 +3529,10 @@ Memory Map of the image
     0x0800bbf4   0x00000075   Data   RO         4724    .conststring        tcp.o
     0x0800bc69   0x00000003   PAD
     0x0800bc6c   0x00000004   Data   RO         5969    .conststring        usbh_cdc.o
-    0x0800bc70   0x00000020   Data   RO         6221    Region$$Table       anon$$obj.o
+    0x0800bc70   0x00000020   Data   RO         6222    Region$$Table       anon$$obj.o
 
 
-    Execution Region RW_IRAM1 (Base: 0x20000000, Size: 0x00007648, Max: 0x00020000, ABSOLUTE, COMPRESSED[0x00000054])
+    Execution Region RW_IRAM1 (Base: 0x20000000, Size: 0x000076d0, Max: 0x00020000, ABSOLUTE, COMPRESSED[0x00000054])
 
     Base Addr    Size         Type   Attr      Idx    E Section Name        Object
 
@@ -3557,12 +3559,13 @@ Memory Map of the image
     0x200000d8   0x00000028   Data   RW         5185    .data               tcp_in.o
     0x20000100   0x00000001   Data   RW         5384    .data               pbuf.o
     0x20000101   0x00000003   PAD
-    0x20000104   0x0000000c   Data   RW         5729    .data               usbh_core.o
+    0x20000104   0x0000000a   Data   RW         5729    .data               usbh_core.o
+    0x2000010e   0x00000002   PAD
     0x20000110   0x00000021   Data   RW         5970    .data               usbh_cdc.o
     0x20000131   0x00000003   PAD
-    0x20000134   0x00000004   Data   RW         6163    .data               mc_w.l(rand.o)
-    0x20000138   0x00000004   Data   RW         6217    .data               mc_w.l(mvars.o)
-    0x2000013c   0x00000004   Data   RW         6218    .data               mc_w.l(mvars.o)
+    0x20000134   0x00000004   Data   RW         6164    .data               mc_w.l(rand.o)
+    0x20000138   0x00000004   Data   RW         6218    .data               mc_w.l(mvars.o)
+    0x2000013c   0x00000004   Data   RW         6219    .data               mc_w.l(mvars.o)
     0x20000140   0x00000040   Zero   RW         2214    .bss                main.o
     0x20000180   0x000003c8   Zero   RW         2366    .bss                usb_host.o
     0x20000548   0x000030e8   Zero   RW         2437    .bss                ethernetif.o
@@ -3576,10 +3579,9 @@ Memory Map of the image
     0x20006f24   0x00000018   Zero   RW         5022    .bss                ip4.o
     0x20006f3c   0x00000010   Zero   RW         5184    .bss                tcp_in.o
     0x20006f4c   0x0000006c   Zero   RW         5728    .bss                usbh_core.o
-    0x20006fb8   0x0000008c   Zero   RW         6086    .bss                rndis.o
-    0x20007044   0x00000004   PAD
-    0x20007048   0x00000200   Zero   RW         2730    HEAP                startup_stm32f407xx.o
-    0x20007248   0x00000400   Zero   RW         2729    STACK               startup_stm32f407xx.o
+    0x20006fb8   0x00000118   Zero   RW         6086    .bss                rndis.o
+    0x200070d0   0x00000200   Zero   RW         2730    HEAP                startup_stm32f407xx.o
+    0x200072d0   0x00000400   Zero   RW         2729    STACK               startup_stm32f407xx.o
 
 
 ==============================================================================
@@ -3605,7 +3607,7 @@ Image component sizes
        202         14        108         72      11952      11005   memp.o
        392         18          0          9          0      20618   netif.o
       1414         16          0          1          0      14029   pbuf.o
-       446         30          0          0        140       7033   rndis.o
+       502         32          0          0        280       7227   rndis.o
         36          8        392          0       1536        840   startup_stm32f407xx.o
        154         20          0          4          0       4439   stm32f4xx_hal.o
        308         22          0          0          0      32319   stm32f4xx_hal_cortex.o
@@ -3625,17 +3627,17 @@ Image component sizes
       2182          8          0          0          0      12975   tcp_out.o
       1176         34          0          8          0      16898   udp.o
        112         24          0          1        968      10046   usb_host.o
-      1176         14          4         33          0      12301   usbh_cdc.o
+      1120          6          4         33          0      12261   usbh_cdc.o
        584         20          0          0        664      12300   usbh_conf.o
-      1824         56          0         12        108      17698   usbh_core.o
+      1824         56          0         10        108      17698   usbh_core.o
       1318         12          0          0          0      12612   usbh_ctlreq.o
        226          0          0          0          0       4716   usbh_ioreq.o
        168          0          0          0          0       4222   usbh_pipes.o
 
     ----------------------------------------------------------------------
-     46996       1628        780        308      29960     763466   Object Totals
+     46996       1622        780        308      30096     763620   Object Totals
          0          0         32          0          0          0   (incl. Generated)
-        58          0          5         19          6          0   (incl. Padding)
+        58          0          5         21          2          0   (incl. Padding)
 
     ----------------------------------------------------------------------
 
@@ -3679,14 +3681,14 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-     47492       1674        780        320      29960     729662   Grand Totals
-     47492       1674        780         84      29960     729662   ELF Image Totals (compressed)
-     47492       1674        780         84          0          0   ROM Totals
+     47492       1668        780        320      30096     729816   Grand Totals
+     47492       1668        780         84      30096     729816   ELF Image Totals (compressed)
+     47492       1668        780         84          0          0   ROM Totals
 
 ==============================================================================
 
     Total RO  Size (Code + RO Data)                48272 (  47.14kB)
-    Total RW  Size (RW Data + ZI Data)             30280 (  29.57kB)
+    Total RW  Size (RW Data + ZI Data)             30416 (  29.70kB)
     Total ROM Size (Code + RO Data + RW Data)      48356 (  47.22kB)
 
 ==============================================================================

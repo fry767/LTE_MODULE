@@ -173,6 +173,7 @@ typedef struct{
 	rndis_MessageType_t		MessageType;
 	rndis_MessageLength_t	MessageLength;
 	rndis_RequestId_t		RequestId;
+	
 	rndis_Oid_t				Oid;
 	rndis_InformationBufferLength_t	InformationBufferLength;
 	rndis_InformationBufferOffset_t	InformationBufferOffset;
@@ -344,5 +345,7 @@ USBH_StatusTypeDef USBH_RNDIS_Query_Specific_Oid(USBH_HandleTypeDef *phost,uint3
 USBH_StatusTypeDef USBH_RNDIS_Get_Specific_Oid(USBH_HandleTypeDef *phost,uint32_t oid,void* buffer);
 USBH_StatusTypeDef USBH_RNDIS_Set_Oid_Property(USBH_HandleTypeDef *phost,uint32_t oid,void* buffer);
 USBH_StatusTypeDef USBH_RNDIS_Get_SetResponse(USBH_HandleTypeDef *phost);
+
+
 
 #endif //RNDIS_H
